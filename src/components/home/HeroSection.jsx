@@ -1,185 +1,341 @@
+import { MdFamilyRestroom } from "react-icons/md";
+import { RiCriminalFill } from "react-icons/ri";
+import { AiFillPropertySafety } from "react-icons/ai";
+import { MdCorporateFare } from "react-icons/md";
+import { TbTax } from "react-icons/tb";
+import { GiCyberEye } from "react-icons/gi";
+import { FaUser } from "react-icons/fa";
+import { BsBank2 } from "react-icons/bs";
+import React, { useState } from "react";
 const HeroSection = () => {
+  const [showForm, setShowForm] = useState(false);
   return (
     <div className="bg-[#FAF9F6]">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#FAF9F6] via-white to-[#FFF8E7] min-h-[90vh] flex items-center">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 w-full">
-          <section className="relative overflow-hidden bg-gradient-to-br from-[#FAF9F6] via-white to-[#FFF8E7] min-h-[90vh] flex items-center">
+      <section
+        className="relative overflow-hidden min-h-[90vh] flex items-center "
+        style={{ backgroundImage: "url('/src/assets/image.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        {/* Dark overlay to make content readable while showing the image clearly */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#C9A227]/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#111827]/5 rounded-full blur-3xl"></div>
 
-            <div className="max-w-[1400px] mx-auto px-8 lg:px-16 w-full">
-              <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-                {/* Left Side */}
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 w-full relative z-10">
+
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+
+            {/* Left Side */}
+            <div>
+
+              <span className="inline-flex items-center bg-[#C9A227]/20 text-[#C9A227] px-5 py-2 rounded-full text-sm font-semibold mt-3 backdrop-blur-md border border-[#C9A227]/30">
+                ⚖ India's Trusted Legal Platform
+              </span>
+
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-[1.1] mt-5 drop-shadow-md">
+                Legal Help
+                <span className="block text-[#C9A227]">
+                  Made Simple
+                </span>
+              </h1>
+
+              <p className="text-gray-200 text-xl mt-4 leading-9 max-w-xl font-medium drop-shadow-sm">
+                Connect with verified lawyers, compare experts,
+                book consultations, and manage your legal matters
+                with complete privacy and confidence.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mt-10">
+                <button
+                  onClick={() => setShowForm(true)}
+                  className="bg-white/10 backdrop-blur-md border border-white/40 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 hover:border-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                  Find Lawyer
+                </button>
+
+                <button className="bg-white/5 backdrop-blur-md border border-[#C9A227]/60 text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#C9A227]/20 hover:border-[#C9A227] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                  Talk Privately
+                </button>
+              </div>
+
+              <div className="flex gap-10 mt-5 bg-black/40 p-6 rounded-2xl backdrop-blur-md border border-white/10 w-fit mb-4">
                 <div>
-
-                  <span className="inline-flex items-center bg-[#C9A227]/15 text-[#C9A227] px-5 py-2 rounded-full text-sm font-semibold mt-2">
-                    ⚖ India's Trusted Legal Platform
-                  </span>
-
-                  <h1 className="text-6xl lg:text-7xl font-bold text-[#111827] leading-[1.1] mt-8">
-                    Legal Help
-                    <span className="block text-[#C9A227]">
-                      Made Simple
-                    </span>
-                  </h1>
-
-                  <p className="text-gray-600 text-xl mt-8 leading-9 max-w-xl">
-                    Connect with verified lawyers, compare experts,
-                    book consultations, and manage your legal matters
-                    with complete privacy and confidence.
-                  </p>
-
-                  <div className="flex flex-wrap gap-4 mt-10">
-                    <button className="bg-[#111827] text-white px-8 py-4 rounded-xl font-semibold">
-                      Find Lawyer
-                    </button>
-
-                    <button className="border-2 border-[#C9A227] text-[#C9A227] px-8 py-4 rounded-xl font-semibold">
-                      Talk Privately
-                    </button>
-                  </div>
-
-                  <div className="flex gap-10 mt-12">
-                    <div>
-                      <h3 className="text-3xl font-bold">500+</h3>
-                      <p className="text-gray-500">Verified Lawyers</p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-3xl font-bold">50K+</h3>
-                      <p className="text-gray-500">Consultations</p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-3xl font-bold">98%</h3>
-                      <p className="text-gray-500">Success Rate</p>
-                    </div>
-                  </div>
-
+                  <h3 className="text-3xl font-bold text-white">500+</h3>
+                  <p className="text-gray-300 font-medium">Verified Lawyers</p>
                 </div>
 
-                {/* Right Side */}
                 <div>
+                  <h3 className="text-3xl font-bold text-white">50K+</h3>
+                  <p className="text-gray-300 font-medium">Consultations</p>
+                </div>
 
-                  <div className="bg-white/90 backdrop-blur-xl rounded-[32px] shadow-2xl border border-white p-8">
+                <div>
+                  <h3 className="text-3xl font-bold text-white">98%</h3>
+                  <p className="text-gray-300 font-medium">Success Rate</p>
+                </div>
+              </div>
 
-                    <h3 className="text-3xl font-bold text-[#111827] mb-8">
+            </div>
+
+            {/* Right Side */}
+            <div>
+              {/* Right Side */}
+              <div className="min-h-[500px] flex items-center justify-center">
+
+                {showForm ? (
+                  <div className="bg-white/10 backdrop-blur-lg rounded-[32px] shadow-2xl border border-white/20 p-8 w-full">
+
+                    <h3 className="text-3xl font-bold text-white mb-8">
                       Find Your Lawyer
                     </h3>
 
                     <input
                       type="text"
                       placeholder="What legal help do you need?"
-                      className="w-full border border-gray-200 rounded-xl p-4 mb-4"
+                      className="w-full border border-white/20 rounded-xl p-4 mb-4 bg-white/10 text-white"
                     />
 
                     <input
                       type="text"
                       placeholder="Your City"
-                      className="w-full border border-gray-200 rounded-xl p-4 mb-4"
+                      className="w-full border border-white/20 rounded-xl p-4 mb-4 bg-white/10 text-white"
                     />
 
-                    <select className="w-full border border-gray-200 rounded-xl p-4 mb-4">
+                    <select className="w-full border border-white/20 rounded-xl p-4 mb-4 bg-black/40 text-white">
                       <option>Practice Area</option>
                       <option>Family Law</option>
                       <option>Property Law</option>
                       <option>Corporate Law</option>
                     </select>
 
-                    <button className="w-full bg-[#C9A227] text-black py-4 rounded-xl font-semibold">
+                    <button className="w-full bg-[#C9A227] text-white py-4 rounded-xl font-bold">
                       Match Me With A Lawyer
                     </button>
 
                   </div>
+                ) : (
+                  <div className="text-center text-white">
 
-                </div>
+
+                    <h3 className="text-3xl font-bold mt-6">
+                      Need Legal Assistance?
+                    </h3>
+
+                    <p className="text-gray-300 mt-4 max-w-md mx-auto">
+                      Click "Find My Lawyer" and get connected
+                      with verified legal experts across India.
+                    </p>
+
+                  </div>
+                )}
 
               </div>
-
-
             </div>
 
-          </section>
-
-
+          </div>
         </div>
       </section>
 
 
       {/* Practice Areas */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-4xl font-bold text-center text-[#111827]">
-          Legal Services
-        </h2>
+      <section className="max-w-[1400px] mx-auto px-8 lg:px-16 py-10">
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
+        <div className="text-center">
+
+          <h2 className="text-5xl font-bold text-[#111827] mt-4">
+            Legal Services We Cover
+          </h2>
+
+          <p className="text-gray-500 max-w-2xl mx-auto mt-4">
+            Get connected with experienced lawyers specializing
+            in various legal fields across India.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
 
           {[
-            "Family Law",
-            "Criminal Law",
-            "Property Law",
-            "Corporate Law",
-            "Tax Law",
-            "Cyber Crime",
-            "Divorce",
-            "Consumer Court"
+            {
+              icon: <MdFamilyRestroom />,
+              title: "Family Law",
+              desc: "Divorce, custody, marriage disputes and family matters."
+            },
+            {
+              icon: <RiCriminalFill />,
+              title: "Criminal Law",
+              desc: "Legal defense, FIR matters and criminal proceedings."
+            },
+            {
+              icon: <AiFillPropertySafety />,
+              title: "Property Law",
+              desc: "Property disputes, registration and ownership issues."
+            },
+            {
+              icon: <MdCorporateFare />,
+              title: "Corporate Law",
+              desc: "Business compliance and company legal support."
+            },
+            {
+              icon: <TbTax />,
+              title: "Tax Law",
+              desc: "Income tax, GST and financial legal matters."
+            },
+            {
+              icon: <GiCyberEye />,
+              title: "Cyber Crime",
+              desc: "Online fraud, cyber security and digital disputes."
+            },
+            {
+              icon: <FaUser />,
+              title: "Labour Law",
+              desc: "Employment disputes and workplace regulations."
+            },
+            {
+              icon: <BsBank2 />,
+              title: "Banking Law",
+              desc: "Loan disputes, recovery and financial matters."
+            }
           ].map((item) => (
             <div
-              key={item}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-xl"
+              key={item.title}
+              className="
+    relative
+    overflow-hidden
+    group
+    rounded-[30px]
+    bg-gradient-to-br
+    from-white
+    via-white
+    to-[#FFF8E7]
+    p-8
+    border
+    border-gray-100
+    shadow-lg
+    hover:shadow-2xl
+    hover:-translate-y-3
+    transition-all
+    duration-500
+    flex
+    flex-col
+    h-full
+  "
             >
-              <h3 className="font-semibold text-lg">{item}</h3>
+              {/* Icon */}
+              <div className="w-16 h-16 rounded-2xl bg-[#C9A227]/10 flex items-center justify-center text-3xl">
+                {item.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-bold text-[#111827] mt-6">
+                {item.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-500 mt-3 leading-7 flex-grow">
+                {item.desc}
+              </p>
+
+              {/* Button Always Bottom */}
+              <button className="mt-6 text-[#C9A227] font-semibold flex items-center gap-2">
+                Learn More →
+              </button>
+
+              {/* Wave */}
+              <div className="absolute bottom-0 left-0 w-full">
+                <svg
+                  viewBox="0 0 500 100"
+                  preserveAspectRatio="none"
+                  className="w-full h-20"
+                >
+                  <path
+                    d="M0,50 C150,120 350,0 500,60 L500,100 L0,100 Z"
+                    fill="rgba(201,162,39,0.08)"
+                  />
+                </svg>
+              </div>
             </div>
           ))}
 
         </div>
       </section>
-
       {/* How It Works */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-10 bg-gradient-to-b from-white to-[#FAF9F6]">
 
-          <h2 className="text-4xl font-bold text-center mb-12">
-            How It Works
-          </h2>
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+          <div className="text-center">
+            <h2 className="text-5xl font-bold text-[#111827] ">
+              How It Works
+            </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+            <p className="text-gray-500 max-w-2xl mx-auto mt-5">
+              Get legal assistance in just a few simple steps.
+            </p>
+          </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#C9A227] rounded-full mx-auto mb-4 flex items-center justify-center font-bold">
-                1
+          <div className="grid lg:grid-cols-3 gap-8 mt-12">
+
+            {[
+              {
+                number: "01",
+                title: "Describe Your Issue",
+                desc: "Tell us about your legal matter securely and confidentially."
+              },
+              {
+                number: "02",
+                title: "Match With Lawyer",
+                desc: "Get connected with verified legal professionals based on your needs."
+              },
+              {
+                number: "03",
+                title: "Get Resolution",
+                desc: "Consult, manage your case and receive expert legal guidance."
+              }
+            ].map((item) => (
+              <div
+                key={item.number}
+                className="
+            relative
+            group
+            bg-white
+            rounded-[30px]
+            p-10
+            border
+            border-gray-100
+            shadow-lg
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            overflow-hidden
+          "
+              >
+
+                {/* Background Number */}
+                <h1 className="absolute top-4 right-6 text-7xl font-bold text-[#C9A227]/10">
+                  {item.number}
+                </h1>
+
+                {/* Step Circle */}
+                <div className="w-20 h-20 rounded-full bg-[#C9A227]/10 flex items-center justify-center text-[#C9A227] text-2xl font-bold">
+                  {item.number}
+                </div>
+
+                <h3 className="text-2xl font-bold text-[#111827] mt-8">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-500 mt-4 leading-8">
+                  {item.desc}
+                </p>
+
+                {/* Bottom Line */}
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#C9A227] group-hover:w-full transition-all duration-500"></div>
+
               </div>
-              <h3 className="font-bold text-xl">Describe Issue</h3>
-              <p className="text-gray-600 mt-3">
-                Share your legal problem securely.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#C9A227] rounded-full mx-auto mb-4 flex items-center justify-center font-bold">
-                2
-              </div>
-              <h3 className="font-bold text-xl">Match Lawyer</h3>
-              <p className="text-gray-600 mt-3">
-                Compare verified experts.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#C9A227] rounded-full mx-auto mb-4 flex items-center justify-center font-bold">
-                3
-              </div>
-              <h3 className="font-bold text-xl">Get Solution</h3>
-              <p className="text-gray-600 mt-3">
-                Start consultation and track progress.
-              </p>
-            </div>
+            ))}
 
           </div>
 
         </div>
+
       </section>
 
     </div>

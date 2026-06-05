@@ -22,6 +22,7 @@ const PopularCategories = () => {
               "🚔 Criminal Law",
               "💼 Employment Law",
               "💰 Tax Law",
+              "💰 Laboure Law",
               "📄 Documentation"
             ].map((item) => (
               <div
