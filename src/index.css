@@ -7,3 +7,7 @@
   --background: #faf9f6;
   --text: #111827;
 }
+
+body {
+  font-family: "Poppins", sans-serif;
+}
