@@ -12,7 +12,7 @@ const CTA = () => {
           ⚖ Trusted Legal Assistance
         </span>
 
-        <h2 className="text-5xl lg:text-6xl font-bold text-white mt-8 leading-tight">
+        <h2 className="text-5xl lg:text-2xl font-bold text-white mt-8 leading-tight">
           Need Legal Help Today?
         </h2>
 
