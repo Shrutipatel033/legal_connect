@@ -7,13 +7,14 @@ import { GiCyberEye } from "react-icons/gi";
 import { FaUser } from "react-icons/fa";
 import { BsBank2 } from "react-icons/bs";
 import React, { useState } from "react";
+import heroimg from "../../assets/image.jpg"
 const HeroSection = () => {
   const [showForm, setShowForm] = useState(false);
   return (
     <div className="bg-[#FAF9F6]">
       <section
         className="relative overflow-hidden min-h-[90vh] flex items-center "
-        style={{ backgroundImage: "url('/src/assets/image.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: `url(${heroimg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         {/* Dark overlay to make content readable while showing the image clearly */}
         <div className="absolute inset-0 bg-black/50"></div>
