@@ -3,8 +3,9 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube
+  FaYoutube,
 } from "react-icons/fa";
+
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
@@ -13,7 +14,7 @@ const Footer = () => {
 
       {/* Newsletter */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16">
-
+        =
         <div className="bg-gradient-to-r from-[#C9A227] to-[#b88f1f] rounded-[32px] p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6">
 
           <div>
@@ -30,7 +31,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 lg:w-80 px-5 py-4 rounded-xl text-black outline-none bor border border-gray-400"
+              className="flex-1 lg:w-80 px-5 py-4 rounded-xl text-black outline-none  border border-gray-800"
             />
 
             <button className="bg-[#111827] text-white px-6 py-4 rounded-xl font-semibold hover:bg-black transition">

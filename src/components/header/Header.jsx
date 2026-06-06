@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
 import { TiThMenu } from "react-icons/ti";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
