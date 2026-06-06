@@ -16,7 +16,7 @@ const CTA = () => {
           Need Legal Help Today?
         </h2>
 
-        <p className="text-gray-300 mt-4 text-xl max-w-1xl mx-auto leading-8">
+        <p className="text-gray-300 mt-4 text-lg max-w-1xl mx-auto leading-8">
           Connect with verified lawyers across India for
           family, property, criminal, corporate and civil matters.
           Secure consultations. Transparent pricing. Fast support.

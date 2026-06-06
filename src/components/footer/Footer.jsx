@@ -69,7 +69,7 @@ const Footer = () => {
 
             </div>
 
-            <p className="text-gray-400 leading-8">
+            <p className="text-gray-400 leading-8 ">
               Connect with verified lawyers, get secure legal
               consultations, manage cases and protect your privacy.
             </p>
