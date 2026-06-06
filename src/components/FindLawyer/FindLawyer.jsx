@@ -94,7 +94,7 @@ const FindLawyerPage = () => {
           {/* Lawyers */}
           <div className="lg:col-span-3">
 
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
 
               <h2 className="text-2xl font-bold">
                 {filteredLawyers.length} Lawyers Found

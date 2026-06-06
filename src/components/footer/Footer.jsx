@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex w-full lg:w-auto gap-3">
+          <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-3">
             <input
               type="email"
               placeholder="Enter your email"
@@ -45,7 +45,7 @@ const Footer = () => {
       {/* Main Footer */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
 
           {/* Company */}
           <div>

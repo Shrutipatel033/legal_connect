@@ -32,7 +32,7 @@ const HeroSection = () => {
                 ⚖ India's Trusted Legal Platform
               </span>
 
-              <h1 className="text-2xl lg:text-5xl font-bold text-white  mt-5 drop-shadow-md">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white  mt-5 drop-shadow-md">
                 Legal Help
                 <span className="block text-[#C9A227] mt-1">
                   Made Simple
@@ -57,7 +57,7 @@ const HeroSection = () => {
                 </button>
               </div>
 
-              <div className="flex gap-10 mt-5 bg-black/40 p-6 rounded-2xl backdrop-blur-md border border-white/10 w-fit mb-4">
+              <div className="flex flex-wrap gap-6 lg:gap-10 mt-5 bg-black/40 p-6 rounded-2xl backdrop-blur-md border border-white/10 w-fit mb-4">
                 <div>
                   <h3 className="text-3xl font-bold text-white">500+</h3>
                   <p className="text-gray-300 font-medium">Verified Lawyers</p>
@@ -271,7 +271,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 
             {[
               {

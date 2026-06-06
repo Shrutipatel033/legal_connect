@@ -35,7 +35,7 @@ const LawyerProfilePage = () => {
 
             <div>
 
-              <h1 className="text-5xl font-bold text-white">
+              <h1 className="text-3xl md:text-5xl font-bold text-white">
                 {lawyer.name}
               </h1>
 

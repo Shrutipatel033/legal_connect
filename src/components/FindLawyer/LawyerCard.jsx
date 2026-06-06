@@ -4,7 +4,7 @@ const LawyerCard = ({ lawyer }) => {
   return (
     <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all">
 
-      <div className="flex gap-5">
+      <div className="flex flex-col sm:flex-row gap-5">
 
         <img
           src={lawyer.image}
@@ -40,7 +40,7 @@ const LawyerCard = ({ lawyer }) => {
 
       </div>
 
-      <div className="flex gap-4 mt-6">
+      <div className="flex flex-wrap gap-4 mt-6">
 
         <Link
           to={`/lawyer/${lawyer.id}`}

@@ -42,7 +42,7 @@ const Review = () => {
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-[#111827]">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#111827]">
             What Clients Say
           </h2>
 
@@ -136,8 +136,8 @@ flex-col
         </Swiper>
 
         {/* Bottom Trust Banner */}
-        <div className="mt-16 bg-[#111827] rounded-3xl p-10 text-center text-white">
-          <h3 className="text-3xl font-bold">
+        <div className="mt-16 bg-[#111827] rounded-3xl p-6 md:p-10 text-center text-white">
+          <h3 className="text-2xl md:text-3xl font-bold">
             Trusted By 50,000+ Clients Across India
           </h3>
 

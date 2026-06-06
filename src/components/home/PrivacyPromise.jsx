@@ -33,7 +33,7 @@ const PrivacyPromise = () => {
     <section className="bg-gradient-to-br from-white via-[#FAF9F6] to-[#F3F4F6] py-8">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
 
-        <h2 className="text-3xl font-bold text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-center">
           Your Privacy Comes First
         </h2>
 
