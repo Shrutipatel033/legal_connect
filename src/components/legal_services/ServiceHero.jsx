@@ -1,6 +1,7 @@
 import image1 from "../../assets/slider.jpg";
 
-const ServicesHero = () => {
+const 
+ServicesHero = () => {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center"

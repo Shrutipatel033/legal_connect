@@ -4,6 +4,7 @@ import Home from "./components/home/Home"
 import FindLawyer from "./components/FindLawyer/FindLawyer";
 import LawyerProfile from "./components/FindLawyer/LawyerProfile"
 import Service from "./components/legal_services/Service";
+import HowItWorks from "./components/HowitWorks/HowItWorks";
 function App() {
   return (
     <Routes>
@@ -12,7 +13,7 @@ function App() {
         <Route path="/lawyers" element={<FindLawyer />} />
         <Route path="/lawyer/:id" element={<LawyerProfile />} />
         <Route path="/services" element={<Service />} />
-
+        <Route path="/how-it-works" element={<HowItWorks />} />
       </Route>
     </Routes>
   );

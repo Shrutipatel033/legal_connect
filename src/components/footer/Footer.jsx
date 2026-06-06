@@ -10,11 +10,11 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-[#111827] to-black text-white mt-20">
+    <footer className="bg-gradient-to-b from-[#111827] to-black text-white mt-2">
 
       {/* Newsletter */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16">
-        =
+
         <div className="bg-gradient-to-r from-[#C9A227] to-[#b88f1f] rounded-[32px] p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6">
 
           <div>
