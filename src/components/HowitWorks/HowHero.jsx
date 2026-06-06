@@ -1,6 +1,6 @@
 const HowHero = () => {
   return (
-    <section className="relative overflow-hidden py-32 bg-gradient-to-br from-[#111827] via-[#1F2937] to-[#111827]">
+    <section className="relative overflow-hidden py-20 bg-gradient-to-br from-[#111827] via-[#1F2937] to-[#111827]">
 
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-20 left-20 w-72 h-72 bg-[#C9A227]/10 rounded-full blur-3xl"></div>
@@ -14,7 +14,7 @@ const HowHero = () => {
           Legal Process Simplified
         </span>
 
-        <h1 className="text-4xl sm:text-3xl lg:text-5xl font-bold text-white mt-6">
+        <h1 className="text-4xl sm:text-3xl lg:text-4xl font-bold text-white mt-6">
           How LegalConnect{" "}
           <span className="text-[#C9A227]">
             Works

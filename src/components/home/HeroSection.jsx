@@ -32,14 +32,14 @@ const HeroSection = () => {
                 ⚖ India's Trusted Legal Platform
               </span>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white  mt-5 drop-shadow-md">
+              <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-white  mt-5 drop-shadow-md">
                 Legal Help
                 <span className="block text-[#C9A227] mt-1">
                   Made Simple
                 </span>
               </h1>
 
-              <p className="text-gray-200 text-lg mt-4 leading-9 max-w-xl font-medium drop-shadow-sm">
+              <p className="text-gray-200 text-md mt-4 leading-9 max-w-xl font-medium drop-shadow-sm">
                 Connect with verified lawyers, compare experts,
                 book consultations, and manage your legal matters
                 with complete privacy and confidence.
@@ -48,7 +48,7 @@ const HeroSection = () => {
               <div className="flex flex-wrap gap-4 mt-10">
                 <button
                   onClick={() => setShowForm(true)}
-                  className="bg-white/10 backdrop-blur-md border border-white/40 text-white px-5 py-3 rounded-xl font-semibold hover:bg-white/20 hover:border-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                  className="bg-white/10 backdrop-blur-md border border-white/40 text-white px-4 py-3 rounded-xl font-semibold hover:bg-white/20 hover:border-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                   Find Lawyer
                 </button>
 
@@ -141,17 +141,17 @@ const HeroSection = () => {
 
         <div className="text-center">
 
-          <h2 className="text-3xl font-bold text-[#111827] mt-4">
+          <h2 className="text-2xl font-bold text-[#111827] mt-2">
             Legal Services We Cover
           </h2>
 
-          <p className="text-gray-500 max-w-lg mx-auto mt-4">
+          <p className="text-gray-500 max-w-md mx-auto mt-4">
             Get connected with experienced lawyers specializing
             in various legal fields across India.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
 
           {[
             {
@@ -225,12 +225,12 @@ const HeroSection = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-[#111827] mt-6">
+              <h3 className="text-lg font-bold text-[#111827] mt-6">
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-500 mt-3 leading-7 flex-grow">
+              <p className="text-gray-500 mt-3 leading-7 text-md flex-grow">
                 {item.desc}
               </p>
 
@@ -262,16 +262,16 @@ const HeroSection = () => {
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-[#111827] ">
+            <h2 className="text-2xl font-bold text-[#111827] ">
               How It Works
             </h2>
 
-            <p className="text-gray-500 max-lg mx-auto mt-2">
+            <p className="text-gray-500 max-md mx-auto mt-2">
               Get legal assistance in just a few simple steps.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
 
             {[
               {
@@ -319,11 +319,11 @@ const HeroSection = () => {
                   {item.number}
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#111827] mt-8">
+                <h3 className="text-xl font-bold text-[#111827] mt-8">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-500 mt-4 leading-8">
+                <p className="text-gray-500 mt-4 leading-8 text-md">
                   {item.desc}
                 </p>
 

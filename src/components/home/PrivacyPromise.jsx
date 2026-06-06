@@ -33,11 +33,11 @@ const PrivacyPromise = () => {
     <section className="bg-gradient-to-br from-white via-[#FAF9F6] to-[#F3F4F6] py-8">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
 
-        <h2 className="text-2xl md:text-3xl font-bold text-center">
+        <h2 className="text-2xl md:text-2xl font-bold text-center">
           Your Privacy Comes First
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
 
           {privacyItems.map((item) => (
             <div

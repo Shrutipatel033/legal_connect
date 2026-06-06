@@ -64,11 +64,11 @@ const FindLawyerPage = () => {
 
         {/* Page Heading */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-[#111827]">
+          <h1 className="text-4xl font-bold text-[#111827]">
             Find Your Lawyer
           </h1>
 
-          <p className="text-gray-500 mt-3">
+          <p className="text-gray-500 mt-3 text-md">
             Search verified lawyers across India
           </p>
         </div>

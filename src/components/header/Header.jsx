@@ -33,7 +33,7 @@ const Header = () => {
             </div>
 
             <div>
-              <h1 className="text-base sm:text-xl lg:text-2xl font-bold text-[#111827]">
+              <h1 className="text-base sm:text-xl lg:text-xl font-bold text-[#111827]">
                 LegalConnect
               </h1>
 

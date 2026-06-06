@@ -18,11 +18,11 @@ const Footer = () => {
         <div className="bg-gradient-to-r from-[#C9A227] to-[#b88f1f] rounded-[32px] p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6">
 
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="text-3xl lg:text-3xl font-bold text-white">
               Stay Updated With Legal Insights
             </h2>
 
-            <p className="text-white/90 mt-2">
+            <p className="text-white/90 mt-2 text-lg" >
               Subscribe for legal tips, updates and expert advice.
             </p>
           </div>
