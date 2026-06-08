@@ -53,19 +53,19 @@ const Benefits = () => {
             Why Choose LegalConnect
           </h2>
 
-          <p className="text-gray-500 max-lg mx-auto mt-4">
+          <p className="text-gray-500 max-lg mx-auto mt-4 ">
             Trusted by thousands of clients for secure,
             transparent and professional legal services.
           </p>
 
         </div>
 
-        <div className="relative">
+        <div className="relative ">
 
           {/* Center Line */}
-          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-1 bg-[#C9A227]/20 -translate-x-1/2"></div>
+          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-1 bg-[#C9A227]/20 -translate-x-1/2 "></div>
 
-          <div className="space-y-12">
+          <div className="space-y-12 ">
 
             {benefits.map((item, index) => (
 

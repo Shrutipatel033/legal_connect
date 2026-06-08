@@ -5,6 +5,9 @@ import FindLawyer from "./components/FindLawyer/FindLawyer";
 import LawyerProfile from "./components/FindLawyer/LawyerProfile"
 import Service from "./components/legal_services/Service";
 import HowItWorks from "./components/HowitWorks/HowItWorks";
+import Blogs from "./Pages/Blogs/Blogs"
+import Contact from "./Pages/Contact/Contact";
+import BlogDetails from "./Pages/Blogs/BlogDetails"
 function App() {
   return (
     <Routes>
@@ -14,6 +17,9 @@ function App() {
         <Route path="/lawyer/:id" element={<LawyerProfile />} />
         <Route path="/services" element={<Service />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
       </Route>
     </Routes>
   );
