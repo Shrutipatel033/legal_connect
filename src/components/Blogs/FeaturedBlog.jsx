@@ -11,7 +11,6 @@ const FeaturedBlog = () => {
               alt=""
               className="h-full object-cover"
             />
-
             <div className="p-10">
               <span className="text-[#C9A227]">
                 Featured Article

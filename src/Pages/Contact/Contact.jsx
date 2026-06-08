@@ -4,41 +4,96 @@ import {
   FaMapMarkerAlt,
   FaClock,
 } from "react-icons/fa";
+import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
+
+const faqs = [
+  {
+    question: " How quickly will I receive a response?",
+    answer:
+      " Usually within 15–30 minutes during working hours.",
+  },
+  {
+    question: " Is my consultation confidential?",
+    answer:
+      " Yes, all consultations and legal documents remain private.",
+  },
+  {
+    question: "Can I consult online?",
+    answer:
+      " Yes, we offer secure online consultations.",
+  },
+];
 
 const Contact = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
   return (
     <>
 
-      {/* Hero */}
-      <section className="relative py-28 bg-gradient-to-br from-[#111827] via-[#1F2937] to-[#111827] overflow-hidden">
+      <section className="relative py-10 overflow-hidden bg-[#FAF9F6]">
 
-        <div className="absolute top-10 left-10 w-72 h-72 bg-[#C9A227]/10 rounded-full blur-3xl"></div>
+        {/* Light Glow Effects */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#C9A227]/10 rounded-full blur-[120px]"></div>
 
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#C9A227]/5 rounded-full blur-[100px]"></div>
 
-        <div className="relative max-w-[1400px] mx-auto px-6 text-center">
+        {/* Decorative Circles */}
+        <div className="absolute top-20 left-20 w-32 h-32 border border-[#C9A227]/20 rounded-full"></div>
 
-          <span className="bg-[#C9A227]/20 text-[#C9A227] px-5 py-2 rounded-full">
+        <div className="absolute top-32 right-32 w-20 h-20 border border-[#C9A227]/20 rounded-full"></div>
+
+        <div className="absolute bottom-24 left-1/3 w-16 h-16 border border-[#C9A227]/20 rounded-full"></div>
+
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+
+          <span className="inline-block px-5 py-2 rounded-full bg-[#C9A227]/10 text-[#C9A227] font-medium">
             Contact LegalConnect
           </span>
 
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mt-6">
-            Get In Touch With
-            <span className="text-[#C9A227]"> Legal Experts</span>
+          <h1 className="mt-8 text-5xl lg:text-5xl font-bold text-[#111827] leading-tight">
+            We're Here To Help With
+            <span className="block text-[#C9A227]">
+              Your Legal Journey
+            </span>
           </h1>
 
-          <p className="text-gray-300 max-w-3xl mx-auto mt-6">
-            Have questions or need legal assistance?
-            Our team is here to help you connect with
-            trusted legal professionals.
+          <p className="mt-5 text-gray-600 text-lg max-w-2xl mx-auto leading-8">
+            Have questions about legal services, consultations,
+            or case management? Our team is ready to assist you.
           </p>
+
+          {/* Premium Cards */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+
+            <div className="bg-white px-6 py-4 rounded-2xl shadow-md">
+              <h4 className="font-semibold text-[#111827]">
+                Confidential Support
+              </h4>
+            </div>
+
+            <div className="bg-white px-6 py-4 rounded-2xl shadow-md">
+              <h4 className="font-semibold text-[#111827]">
+                Verified Lawyers
+              </h4>
+            </div>
+
+            <div className="bg-white px-6 py-4 rounded-2xl shadow-md">
+              <h4 className="font-semibold text-[#111827]">
+                Quick Response
+              </h4>
+            </div>
+
+          </div>
 
         </div>
 
       </section>
-
       {/* Contact Cards */}
-      <section className="py-20 bg-[#FAF9F6]">
+      <section className="py-10 bg-[#FAF9F6]">
 
         <div className="max-w-[1400px] mx-auto px-6">
 
@@ -115,7 +170,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-24">
+      <section className="py-10">
 
         <div className="max-w-[1200px] mx-auto px-6">
 
@@ -197,68 +252,69 @@ const Contact = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-[#FAF9F6]">
+      <section className="py-10 bg-[#FAF9F6]">
 
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto ">
 
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-start mb-12">
             Frequently Asked Questions
           </h2>
 
-          <div className="space-y-5">
+          <div className="space-y-4">
 
-            <div className="bg-white p-6 rounded-2xl shadow">
-              <h3 className="font-bold">
-                How quickly will I receive a response?
-              </h3>
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-sm overflow-hidden"
+              >
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full flex items-center justify-between p-6 text-left"
+                >
+                  <h3 className="font-semibold text-lg text-[var(--primary)]">
+                    {faq.question}
+                  </h3>
 
-              <p className="text-gray-500 mt-2">
-                Usually within 15–30 minutes during working hours.
-              </p>
-            </div>
+                  <FaChevronDown
+                    className={`text-[var(--accent)] transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                      }`}
+                  />
+                </button>
 
-            <div className="bg-white p-6 rounded-2xl shadow">
-              <h3 className="font-bold">
-                Is my consultation confidential?
-              </h3>
-
-              <p className="text-gray-500 mt-2">
-                Yes, all consultations and legal documents remain private.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow">
-              <h3 className="font-bold">
-                Can I consult online?
-              </h3>
-
-              <p className="text-gray-500 mt-2">
-                Yes, we offer secure online consultations.
-              </p>
-            </div>
+                <div
+                  className={`transition-all duration-300 overflow-hidden ${openIndex === index
+                    ? "max-h-40 opacity-100 px-6 pb-6"
+                    : "max-h-0 opacity-0"
+                    }`}
+                >
+                  <p className="text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            ))}
 
           </div>
-
         </div>
 
       </section>
 
       {/* CTA */}
-      <section className="py-24">
+      <section className="">
 
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className=" mx-auto ">
 
-          <div className="bg-gradient-to-r from-[#111827] to-[#1F2937] rounded-[40px] p-16 text-center">
+          <div className="bg-gradient-to-r from-[#111827] to-[#1F2937]   p-12 text-center">
 
-            <h2 className="text-5xl font-bold text-white">
+            <h2 className="text-4xl font-bold text-white">
               Need Immediate Legal Help?
             </h2>
 
-            <p className="text-gray-300 mt-5">
+            <p className="text-gray-300 mt-3">
               Connect with verified lawyers and get expert guidance today.
             </p>
 
-            <button className="mt-8 bg-[#C9A227] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#b59123]">
+            <button className="mt-5 bg-[#C9A227] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#b59123]">
               Find Lawyer Now
             </button>
 

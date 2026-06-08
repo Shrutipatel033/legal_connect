@@ -13,9 +13,9 @@ const Footer = () => {
     <footer className="bg-gradient-to-b from-[#111827] to-black text-white mt-2">
 
       {/* Newsletter */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-10">
 
-        <div className="bg-gradient-to-r from-[#C9A227] to-[#b88f1f] rounded-[32px] p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6">
+        {/* <div className="bg-gradient-to-r from-[#C9A227] to-[#b88f1f] rounded-[32px] p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6">
 
           <div>
             <h2 className="text-3xl lg:text-3xl font-bold text-white">
@@ -39,12 +39,12 @@ const Footer = () => {
             </button>
           </div>
 
-        </div>
+        </div> */}
 
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-5">
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
 

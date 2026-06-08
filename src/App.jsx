@@ -8,6 +8,8 @@ import HowItWorks from "./components/HowitWorks/HowItWorks";
 import Blogs from "./Pages/Blogs/Blogs"
 import Contact from "./Pages/Contact/Contact";
 import BlogDetails from "./Pages/Blogs/BlogDetails"
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
 function App() {
   return (
     <Routes>
@@ -19,7 +21,8 @@ function App() {
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/blog/:id" element={<BlogDetails />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Route>
     </Routes>
   );

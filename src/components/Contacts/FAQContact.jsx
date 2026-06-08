@@ -1,5 +1,6 @@
 const ContactFAQ = () => {
   const faqs = [
+
     {
       q: "How quickly will I receive a response?",
       a: "Usually within 15-30 minutes during business hours.",

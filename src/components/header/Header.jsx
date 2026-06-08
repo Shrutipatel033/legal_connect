@@ -104,13 +104,13 @@ const Header = () => {
             {/* Desktop Buttons */}
             <div className="hidden lg:flex items-center gap-3">
 
-              <button className="px-5 py-2.5 rounded-xl border border-gray-300 text-slate-700 font-medium hover:border-[#C9A227] hover:text-[#C9A227] transition-all duration-300">
+              <NavLink to="/login" className="px-5 py-2.5 rounded-xl border border-gray-300 text-slate-700 font-medium hover:border-[#C9A227] hover:text-[#C9A227] transition-all duration-300">
                 Login
-              </button>
+              </NavLink>
 
-              <button className="px-5 py-2.5 rounded-xl border border-[#C9A227] text-[#C9A227] font-medium hover:bg-[#C9A227] hover:text-white transition-all duration-300">
+              <NavLink to="/register" className="px-5 py-2.5 rounded-xl border border-[#C9A227] text-[#C9A227] font-medium hover:bg-[#C9A227] hover:text-white transition-all duration-300">
                 Register
-              </button>
+              </NavLink>
 
               <button className="px-6 py-2.5 rounded-xl bg-[#111827] text-white font-medium shadow-lg hover:bg-[#1F2937] transition-all duration-300">
                 Talk Privately
