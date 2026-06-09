@@ -54,7 +54,7 @@ const Contact = () => {
             Contact LegalConnect
           </span>
 
-          <h1 className="mt-8 text-5xl lg:text-5xl font-bold text-[#111827] leading-tight">
+          <h1 className="mt-8 text-5xl lg:text-4xl font-bold text-[#111827] leading-tight">
             We're Here To Help With
             <span className="block text-[#C9A227]">
               Your Legal Journey
@@ -182,7 +182,7 @@ const Contact = () => {
                 Send Message
               </span>
 
-              <h2 className="text-5xl font-bold text-[#111827] mt-4">
+              <h2 className="text-4xl font-bold text-[#111827] mt-4">
                 Let's Discuss
                 Your Legal Issue
               </h2>
