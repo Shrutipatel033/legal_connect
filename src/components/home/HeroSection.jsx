@@ -8,8 +8,13 @@ import { FaUser } from "react-icons/fa";
 import { BsBank2 } from "react-icons/bs";
 import { useState } from "react";
 import heroimg from "../../assets/image.jpg"
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+
 const HeroSection = () => {
   const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="bg-[#FAF9F6]">
       <section
@@ -234,13 +239,15 @@ const HeroSection = () => {
                 {item.desc}
               </p>
 
-              {/* Button Always Bottom */}
-              <button className="mt-6 text-[#C9A227] font-semibold flex items-center gap-2">
+              <Link
+                to={`/services/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
+                className="relative z-20 mt-6 text-[#C9A227] font-semibold"
+              >
                 Learn More →
-              </button>
+              </Link>
 
               {/* Wave */}
-              <div className="absolute bottom-0 left-0 w-full">
+              <div className="absolute bottom-0 left-0 w-full pointer-events-none">
                 <svg
                   viewBox="0 0 500 100"
                   preserveAspectRatio="none"

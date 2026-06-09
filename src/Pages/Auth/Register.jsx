@@ -32,7 +32,7 @@ const Register = () => {
 
   return (
     <section className="bg-[#FAF9F6] py-8 px-6">
-      <div className="w-full max-w-4xl mx-auto">
+      <div className="w-full max-w-5xl mx-auto">
         < div className="bg-white rounded-[30px] overflow-hidden shadow-xl">
           <div className="grid lg:grid-cols-2 min-h-[400px]">
             {/* LEFT SIDE FORM */}

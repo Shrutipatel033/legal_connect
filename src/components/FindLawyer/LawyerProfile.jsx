@@ -2,9 +2,7 @@ import { useParams } from "react-router-dom";
 import lawyers from "../FindLawyer/lawyerData";
 
 const LawyerProfilePage = () => {
-
   const { id } = useParams();
-
   const lawyer = lawyers.find(
     (item) => item.id === Number(id)
   );

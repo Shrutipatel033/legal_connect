@@ -1,9 +1,9 @@
 
-import HeroSection from "./HeroSection";
+import HeroSection from "../../components/home/HeroSection";
 // import PopularCategories from "./PopularCategories";
-import PrivacyPromise from "./PrivacyPromise";
-import Review from "./Review"
-import CTA from "./CTA";
+import PrivacyPromise from "../../components/home/PrivacyPromise";
+import Review from "../../components/home/Review"
+import CTA from "../../components/home/CTA";
 const Home = () => {
   return (
     <>

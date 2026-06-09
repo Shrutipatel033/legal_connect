@@ -46,7 +46,7 @@ const Contact = () => {
 
         <div className="absolute top-32 right-32 w-20 h-20 border border-[#C9A227]/20 rounded-full"></div>
 
-        <div className="absolute bottom-24 left-1/3 w-16 h-16 border border-[#C9A227]/20 rounded-full"></div>
+        <div className="absolute bottom-24 left-1/]][3 w-16 h-16 border border-[#C9A227]/20 rounded-full"></div>
 
         <div className="relative max-w-6xl mx-auto px-6 text-center">
 

@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 
 const LawyerCard = ({ lawyer }) => {
   return (
-    <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all">
-
+    <div className="bg-white rounded-[28px] p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       <div className="flex flex-col sm:flex-row gap-5">
 
         <img
@@ -31,6 +30,13 @@ const LawyerCard = ({ lawyer }) => {
           <p>🏛 {lawyer.court}</p>
 
           <p>₹ {lawyer.fee}</p>
+          <p className="text-sm text-gray-500">
+            Response Time: {lawyer.responseTime}
+          </p>
+
+          <p className="text-sm text-green-600 font-medium">
+            {lawyer.availability}
+          </p>
 
           <p className="text-green-600">
             ✓ Verified Lawyer

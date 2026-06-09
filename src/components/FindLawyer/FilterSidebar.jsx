@@ -1,7 +1,13 @@
-const FilterSidebar = () => {
+const FilterSidebar = ({
+  language,
+  setLanguage,
+  gender,
+  setGender,
+  availability,
+  setAvailability,
+}) => {
   return (
-    <div className="bg-white rounded-3xl shadow-lg p-6 sticky top-24">
-
+    <div className="bg-white rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-6 sticky top-24">
       <h2 className="text-2xl font-bold mb-6">
         Filters
       </h2>
@@ -36,11 +42,15 @@ const FilterSidebar = () => {
           Language
         </h3>
 
-        <select className="w-full border rounded-xl p-3">
-          <option>All Languages</option>
-          <option>Hindi</option>
-          <option>English</option>
-          <option>Urdu</option>
+        <select
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
+          className="w-full border rounded-xl p-3"
+        >
+          <option value="">All Languages</option>
+          <option value="Hindi">Hindi</option>
+          <option value="English">English</option>
+          <option value="Urdu">Urdu</option>
         </select>
       </div>
 
@@ -51,12 +61,24 @@ const FilterSidebar = () => {
         </h3>
 
         <label className="flex gap-2 mb-2">
-          <input type="radio" name="gender" />
+          <input
+            type="radio"
+            name="gender"
+            value="Male"
+            checked={gender === "Male"}
+            onChange={(e) => setGender(e.target.value)}
+          />
           Male
         </label>
 
         <label className="flex gap-2">
-          <input type="radio" name="gender" />
+          <input
+            type="radio"
+            name="gender"
+            value="Female"
+            checked={gender === "Female"}
+            onChange={(e) => setGender(e.target.value)}
+          />
           Female
         </label>
       </div>
@@ -102,13 +124,30 @@ const FilterSidebar = () => {
         </h3>
 
         <label className="block">
-          <input type="checkbox" /> Available Today
+          <input
+            type="radio"
+            name="availability"
+            value="Available Today"
+            checked={availability === "Available Today"}
+            onChange={(e) => setAvailability(e.target.value)}
+          />
+          Available Today
+
         </label>
 
         <label className="block">
           <input type="checkbox" /> Online Consultation
         </label>
-      </div>
+      </div><button
+        onClick={() => {
+          setLanguage("");
+          setGender("");
+          setAvailability("");
+        }}
+        className="w-full mt-6 bg-[#111827] text-white py-3 rounded-xl"
+      >
+        Clear Filters
+      </button>
 
     </div>
   );

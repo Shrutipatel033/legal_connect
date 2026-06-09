@@ -2,7 +2,7 @@ import SearchBar from "../FindLawyer/Searchbar";
 import FilterSidebar from "../FindLawyer/FilterSidebar";
 import LawyerCard from "../FindLawyer/LawyerCard";
 import lawyers from "../FindLawyer/lawyerData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const FindLawyerPage = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
@@ -13,6 +13,9 @@ const FindLawyerPage = () => {
   const [availability, setAvailability] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [filteredLawyers, setFilteredLawyers] = useState(lawyers);
+  const [specialization, setSpecialization] = useState("");
+  const [rating, setRating] = useState("");
+  const [maxFee, setMaxFee] = useState(5000);
   const handleSearch = () => {
     let result = lawyers.filter((lawyer) => {
       return (
@@ -27,15 +30,25 @@ const FindLawyerPage = () => {
 
         (court === "" ||
           lawyer.court === court) &&
-
         (language === "" ||
-          lawyer.language === language) &&
+          lawyer.language.includes(language)) &&
 
         (gender === "" ||
           lawyer.gender === gender) &&
 
         (availability === "" ||
-          lawyer.availability === availability)
+          lawyer.availability === availability) &&
+        (specialization === "" ||
+          lawyer.specialization === specialization)
+
+        &&
+
+        (rating === "" ||
+          lawyer.rating >= Number(rating))
+
+        &&
+
+        lawyer.fee <= maxFee
       );
     });
 
@@ -58,6 +71,18 @@ const FindLawyerPage = () => {
 
     setFilteredLawyers(result);
   };
+  useEffect(() => {
+    handleSearch();
+  }, [
+    search,
+    category,
+    city,
+    court,
+    language,
+    gender,
+    availability,
+    sortBy,
+  ]);
   return (
     <section className="min-h-screen py-10 bg-gradient-to-br from-[#FAF9F6] via-white to-[#F8F4E8]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
@@ -88,7 +113,20 @@ const FindLawyerPage = () => {
 
           {/* Filters */}
           <div>
-            <FilterSidebar />
+            <FilterSidebar
+              specialization={specialization}
+              setSpecialization={setSpecialization}
+              language={language}
+              setLanguage={setLanguage}
+              gender={gender}
+              setGender={setGender}
+              availability={availability}
+              setAvailability={setAvailability}
+              rating={rating}
+              setRating={setRating}
+              maxFee={maxFee}
+              setMaxFee={setMaxFee}
+            />
           </div>
 
           {/* Lawyers */}
