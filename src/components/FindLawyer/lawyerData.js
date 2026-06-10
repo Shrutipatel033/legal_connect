@@ -13,7 +13,7 @@ const lawyers = [
     verified: true,
     availability: "Available Today",
     responseTime: "15 Minutes",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
   },
 
   {
@@ -30,7 +30,7 @@ const lawyers = [
     verified: true,
     availability: "Available Tomorrow",
     responseTime: "20 Minutes",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: "https://randomuser.me/api/portraits/women/40.jpg",
   },
 ];
 

@@ -10,8 +10,6 @@ import { useState } from "react";
 import heroimg from "../../assets/image.jpg"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-
 const HeroSection = () => {
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
@@ -23,20 +21,13 @@ const HeroSection = () => {
       >
         {/* Dark overlay to make content readable while showing the image clearly */}
         <div className="absolute inset-0 bg-black/50"></div>
-
-
-
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 w-full relative z-10">
-
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-
             {/* Left Side */}
             <div>
-
               <span className="inline-flex items-center bg-[#C9A227]/20 text-[#C9A227] px-5 py-2 rounded-full text-sm font-semibold mt-5 backdrop-blur-md border border-[#C9A227]/30 ">
                 ⚖ India's Trusted Legal Platform
               </span>
-
               <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-white  mt-5 drop-shadow-md">
                 Legal Help
                 <span className="block text-[#C9A227] mt-1">
@@ -49,46 +40,39 @@ const HeroSection = () => {
                 book consultations, and manage your legal matters
                 with complete privacy and confidence.
               </p>
-
               <div className="flex flex-wrap gap-4 mt-10">
                 <button
                   onClick={() => setShowForm(true)}
                   className="bg-white/10 backdrop-blur-md border border-white/40 text-white px-4 py-3 rounded-xl font-semibold hover:bg-white/20 hover:border-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                   Find Lawyer
                 </button>
-
-                <button className="bg-white/5 backdrop-blur-md border border-[#C9A227]/60 text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#C9A227]/20 hover:border-[#C9A227] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                <Link
+                  to="/anonymous-consultation"
+                  className="bg-white/5 backdrop-blur-md border border-[#C9A227]/60 text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#C9A227]/20 hover:border-[#C9A227] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                   Talk Privately
-                </button>
+                </Link>
               </div>
-
               <div className="flex flex-wrap gap-6 lg:gap-10 mt-5 bg-black/40 p-6 rounded-2xl backdrop-blur-md border border-white/10 w-fit mb-4">
                 <div>
                   <h3 className="text-3xl font-bold text-white">500+</h3>
                   <p className="text-gray-300 font-medium">Verified Lawyers</p>
                 </div>
-
                 <div>
                   <h3 className="text-3xl font-bold text-white">50K+</h3>
                   <p className="text-gray-300 font-medium">Consultations</p>
                 </div>
-
                 <div>
                   <h3 className="text-3xl font-bold text-white">98%</h3>
                   <p className="text-gray-300 font-medium">Success Rate</p>
                 </div>
               </div>
-
             </div>
-
             {/* Right Side */}
             <div>
               {/* Right Side */}
               <div className="min-h-[500px] flex items-center justify-center">
-
                 {showForm ? (
                   <div className="bg-white/10 backdrop-blur-lg rounded-[32px] shadow-2xl border border-white/20 p-8 w-full">
-
                     <h3 className="text-3xl font-bold text-white mb-8">
                       Find Your Lawyer
                     </h3>

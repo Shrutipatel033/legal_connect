@@ -26,7 +26,6 @@ const Register = () => {
       alert("Passwords do not match");
       return;
     }
-
     console.log(formData);
   };
 

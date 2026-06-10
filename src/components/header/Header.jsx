@@ -87,6 +87,10 @@ const Header = () => {
             >
               Contact
             </NavLink>
+            <NavLink to="/my-consultations" className={navLinkClass}>
+              My Consultations
+            </NavLink>
+
 
           </nav>
 
@@ -112,9 +116,9 @@ const Header = () => {
                 Register
               </NavLink>
 
-              <button className="px-6 py-2.5 rounded-xl bg-[#111827] text-white font-medium shadow-lg hover:bg-[#1F2937] transition-all duration-300">
+              {/* <button className="px-6 py-2.5 rounded-xl bg-[#111827] text-white font-medium shadow-lg hover:bg-[#1F2937] transition-all duration-300">
                 Talk Privately
-              </button>
+              </button> */}
 
             </div>
 

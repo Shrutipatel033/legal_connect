@@ -11,6 +11,12 @@ import BlogDetails from "./Pages/Blogs/BlogDetails"
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
 import ServiceDetails from "./components/legal_services/ServiceDetails";
+import BookConsultation from "./Pages/Consultation/BookConsultation";
+import ConsultationSuccess from "./Pages/Consultation/ConsultationSuccess";
+import MyConsultations from "./Pages/Consultation/MyConsultation";
+import AnonymousConsultation from "./Pages/Consultation/AnonymousConsultation";
+import AnonymousSuccess from "./Pages/Consultation/AnonymousSuccess";
+import AnonymousRequestSuccess from "./Pages/Consultation/AnonymousRequestSuccess";
 function App() {
   return (
     <Routes>
@@ -20,15 +26,18 @@ function App() {
         <Route path="/lawyer/:id" element={<LawyerProfile />} />
         <Route path="/services" element={<Service />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route
-          path="/services/:serviceName"
-          element={<ServiceDetails />}
-        />
+        <Route path="/services/:serviceName" element={<ServiceDetails />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/book-consultation/:lawyerId" element={<BookConsultation />} />
+        <Route path="/consultation-success" element={<ConsultationSuccess />} />
+        <Route path="/anonymous-request-success" element={<AnonymousRequestSuccess />} />
+        <Route path="/my-consultations" element={<MyConsultations />} />
+        <Route path="/anonymous-consultation" element={<AnonymousConsultation />} />
+        <Route path="/anonymous-success" element={<AnonymousSuccess />} />
       </Route>
     </Routes>
   );

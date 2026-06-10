@@ -1,4 +1,3 @@
-
 import HeroSection from "../../components/home/HeroSection";
 // import PopularCategories from "./PopularCategories";
 import PrivacyPromise from "../../components/home/PrivacyPromise";

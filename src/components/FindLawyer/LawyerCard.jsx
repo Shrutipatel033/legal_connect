@@ -1,63 +1,141 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LawyerCard = ({ lawyer }) => {
+  const navigate = useNavigate();
+
+  const isAnonymous =
+    localStorage.getItem("anonymousMode") === "true";
+
   return (
-    <div className="bg-white rounded-[28px] p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-      <div className="flex flex-col sm:flex-row gap-5">
+    <div className="bg-white rounded-[30px] p-6 border border-gray-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
 
-        <img
-          src={lawyer.image}
-          alt={lawyer.name}
-          className="w-24 h-24 rounded-full object-cover"
-        />
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
 
-        <div>
+        {/* Left Section */}
+        <div className="flex gap-5 flex-1">
 
-          <h3 className="text-2xl font-bold">
-            {lawyer.name}
-          </h3>
+          {/* Lawyer Image */}
+          <div className="shrink-0">
+            <img
+              src={lawyer.image}
+              alt={lawyer.name}
+              className="w-20 h-20 rounded-2xl object-cover border-2 border-[#C9A227]/20"
+            />
+          </div>
 
-          <p className="text-[#C9A227] font-semibold">
-            {lawyer.specialization}
-          </p>
+          {/* Lawyer Details */}
+          <div className="flex-1">
 
-          <p>⭐ {lawyer.rating}</p>
+            <div className="flex items-center gap-2 flex-wrap">
 
-          <p>{lawyer.experience} Years Experience</p>
+              <h3 className="text-2xl font-bold text-[#111827]">
+                {lawyer.name}
+              </h3>
 
-          <p>📍 {lawyer.city}</p>
+              <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
+                ✓ Verified
+              </span>
 
-          <p>🏛 {lawyer.court}</p>
+              <span className="bg-[#C9A227]/10 text-[#C9A227] px-3 py-1 rounded-full text-xs font-semibold">
+                ⭐ {lawyer.rating}
+              </span>
 
-          <p>₹ {lawyer.fee}</p>
-          <p className="text-sm text-gray-500">
-            Response Time: {lawyer.responseTime}
-          </p>
+            </div>
 
-          <p className="text-sm text-green-600 font-medium">
-            {lawyer.availability}
-          </p>
+            <p className="text-[#C9A227] font-semibold mt-2">
+              {lawyer.specialization}
+            </p>
 
-          <p className="text-green-600">
-            ✓ Verified Lawyer
-          </p>
+            {/* Information Chips */}
+            <div className="flex flex-wrap gap-3 mt-4">
+
+              <span className="bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl text-sm">
+                🎓 {lawyer.experience} Years Experience
+              </span>
+
+              <span className="bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl text-sm">
+                📍 {lawyer.city}
+              </span>
+
+              <span className="bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl text-sm">
+                🏛 {lawyer.court}
+              </span>
+
+            </div>
+
+            {/* Status */}
+            <div className="flex flex-wrap gap-3 mt-4">
+
+              <span className="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-xs font-medium">
+                ⏱ Response Time: {lawyer.responseTime}
+              </span>
+
+              <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-xs font-medium">
+                ● {lawyer.availability}
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
 
-      </div>
+        {/* Right Section */}
+        <div className="flex flex-col items-end justify-between min-w-[170px]">
 
-      <div className="flex flex-wrap gap-4 mt-6">
+          {/* Fee */}
+          <div className="text-right">
 
-        <Link
-          to={`/lawyer/${lawyer.id}`}
-          className="bg-[#111827] text-white px-5 py-3 rounded-xl"
-        >
-          View Profile
-        </Link>
+            <p className="text-sm text-gray-500">
+              Consultation Fee
+            </p>
 
-        <button className="bg-[#C9A227] px-5 py-3 rounded-xl font-semibold">
-          Book Consultation
-        </button>
+            <h3 className="text-3xl font-bold text-[#C9A227]">
+              ₹{lawyer.fee}
+            </h3>
+
+            <p className="text-xs text-gray-500">
+              Starting Fee
+            </p>
+
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-col gap-3 mt-6 w-full">
+
+            <Link
+              to={`/lawyer/${lawyer.id}`}
+              className="text-center py-3 rounded-xl border border-[#111827] text-[#111827] font-semibold hover:bg-[#111827] hover:text-white transition-all duration-300"
+            >
+              View Profile
+            </Link>
+
+            {isAnonymous ? (
+              <button
+                onClick={() => {
+                  localStorage.setItem(
+                    "selectedLawyer",
+                    JSON.stringify(lawyer)
+                  );
+
+                  navigate("/anonymous-request-success");
+                }}
+                className="w-full py-3 rounded-xl bg-[#C9A227] text-white font-semibold hover:bg-[#b88f1f] transition-all duration-300"
+              >
+                Anonymous Request
+              </button>
+            ) : (
+              <Link
+                to={`/book-consultation/${lawyer.id}`}
+                className="text-center py-3 rounded-xl bg-[#111827] text-white font-semibold hover:bg-black transition-all duration-300"
+              >
+                Book Consultation
+              </Link>
+            )}
+
+          </div>
+
+        </div>
 
       </div>
 

@@ -1,12 +1,10 @@
 import { useParams } from "react-router-dom";
 import lawyers from "../FindLawyer/lawyerData";
-
 const LawyerProfilePage = () => {
   const { id } = useParams();
   const lawyer = lawyers.find(
     (item) => item.id === Number(id)
   );
-
   if (!lawyer) {
     return (
       <div className="text-center py-20">
@@ -14,7 +12,6 @@ const LawyerProfilePage = () => {
       </div>
     );
   }
-
   return (
     <section className="bg-[#FAF9F6] min-h-screen">
 
@@ -28,7 +25,7 @@ const LawyerProfilePage = () => {
             <img
               src={lawyer.image}
               alt={lawyer.name}
-              className="w-40 h-40 rounded-full border-4 border-[#C9A227]"
+              className="w-40 h-40 rounded-fullp border-4 border-[#C9A227]"
             />
 
             <div>
