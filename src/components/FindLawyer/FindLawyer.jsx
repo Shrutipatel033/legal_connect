@@ -3,6 +3,8 @@ import FilterSidebar from "../FindLawyer/FilterSidebar";
 import LawyerCard from "../FindLawyer/LawyerCard";
 import lawyers from "../FindLawyer/lawyerData";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 const FindLawyerPage = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
@@ -82,13 +84,21 @@ const FindLawyerPage = () => {
     gender,
     availability,
     sortBy,
+    specialization,
+    rating,
+    maxFee
   ]);
   return (
     <section className="min-h-screen py-10 bg-gradient-to-br from-[#FAF9F6] via-white to-[#F8F4E8]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
 
         {/* Page Heading */}
-        <div className="text-center mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-8"
+        >
           <h1 className="text-4xl font-bold text-[#111827]">
             Find Your Lawyer
           </h1>
@@ -96,23 +106,33 @@ const FindLawyerPage = () => {
           <p className="text-gray-500 mt-3 text-md">
             Search verified lawyers across India
           </p>
-        </div>
-        <SearchBar
-          search={search}
-          setSearch={setSearch}
-          category={category}
-          setCategory={setCategory}
-          city={city}
-          setCity={setCity}
-          court={court}
-          setCourt={setCourt}
-          handleSearch={handleSearch}
-        />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <SearchBar
+            search={search}
+            setSearch={setSearch}
+            category={category}
+            setCategory={setCategory}
+            city={city}
+            setCity={setCity}
+            court={court}
+            setCourt={setCourt}
+            handleSearch={handleSearch}
+          />
+        </motion.div>
         {/* Content */}
         <div className="grid lg:grid-cols-4 gap-8 mt-8">
 
           {/* Filters */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <FilterSidebar
               specialization={specialization}
               setSpecialization={setSpecialization}
@@ -127,7 +147,7 @@ const FindLawyerPage = () => {
               maxFee={maxFee}
               setMaxFee={setMaxFee}
             />
-          </div>
+          </motion.div>
 
           {/* Lawyers */}
           <div className="lg:col-span-3">
@@ -163,15 +183,22 @@ const FindLawyerPage = () => {
 
             </div>
 
-            <div className="grid gap-6">
-
-              {filteredLawyers.map((lawyer) => (
-                <LawyerCard
-                  key={lawyer.id}
-                  lawyer={lawyer}
-                />
-              ))}
-            </div>
+            <motion.div layout className="grid gap-6">
+              <AnimatePresence>
+                {filteredLawyers.map((lawyer, index) => (
+                  <motion.div
+                    key={lawyer.id}
+                    layout
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                  >
+                    <LawyerCard lawyer={lawyer} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
 
           </div>
 

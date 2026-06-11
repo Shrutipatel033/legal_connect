@@ -71,7 +71,7 @@ const SearchBar = ({
         {/* Button */}
         <button
           onClick={handleSearch}
-          className="bg-[#111827] text-white rounded-xl flex items-center justify-center gap-2 font-semibold"
+          className="bg-[#111827] text-white rounded-xl flex items-center justify-center gap-2 font-semibold py-4 lg:py-0 hover:bg-black transition-all duration-300"
         >
           <FaSearch />
           Search

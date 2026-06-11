@@ -5,6 +5,12 @@ const FilterSidebar = ({
   setGender,
   availability,
   setAvailability,
+  specialization,
+  setSpecialization,
+  rating,
+  setRating,
+  maxFee,
+  setMaxFee,
 }) => {
   return (
     <div className="bg-white rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-6 sticky top-24">
@@ -20,17 +26,35 @@ const FilterSidebar = ({
 
         <div className="space-y-2">
           <label className="flex gap-2">
-            <input type="checkbox" />
+            <input 
+              type="radio" 
+              name="specialization"
+              value="Family Law"
+              checked={specialization === "Family Law"}
+              onChange={(e) => setSpecialization(e.target.value)}
+            />
             Family Law
           </label>
 
           <label className="flex gap-2">
-            <input type="checkbox" />
+            <input 
+              type="radio" 
+              name="specialization"
+              value="Criminal Law"
+              checked={specialization === "Criminal Law"}
+              onChange={(e) => setSpecialization(e.target.value)}
+            />
             Criminal Law
           </label>
 
           <label className="flex gap-2">
-            <input type="checkbox" />
+            <input 
+              type="radio" 
+              name="specialization"
+              value="Property Law"
+              checked={specialization === "Property Law"}
+              onChange={(e) => setSpecialization(e.target.value)}
+            />
             Property Law
           </label>
         </div>
@@ -93,12 +117,14 @@ const FilterSidebar = ({
           type="range"
           min="500"
           max="5000"
-          className="w-full"
+          value={maxFee}
+          onChange={(e) => setMaxFee(Number(e.target.value))}
+          className="w-full accent-[#C9A227]"
         />
 
-        <div className="flex justify-between text-sm mt-2">
+        <div className="flex justify-between text-sm mt-2 font-medium">
           <span>₹500</span>
-          <span>₹5000</span>
+          <span>₹{maxFee}</span>
         </div>
       </div>
 
@@ -108,12 +134,26 @@ const FilterSidebar = ({
           Rating
         </h3>
 
-        <label className="block">
-          <input type="checkbox" /> ⭐ 4+
+        <label className="flex gap-2 mb-2">
+          <input 
+            type="radio" 
+            name="rating"
+            value="4"
+            checked={rating === "4"}
+            onChange={(e) => setRating(e.target.value)}
+          /> 
+          <span>⭐ 4+</span>
         </label>
 
-        <label className="block">
-          <input type="checkbox" /> ⭐ 4.5+
+        <label className="flex gap-2">
+          <input 
+            type="radio" 
+            name="rating"
+            value="4.5"
+            checked={rating === "4.5"}
+            onChange={(e) => setRating(e.target.value)}
+          /> 
+          <span>⭐ 4.5+</span>
         </label>
       </div>
 
@@ -123,7 +163,7 @@ const FilterSidebar = ({
           Availability
         </h3>
 
-        <label className="block">
+        <label className="flex gap-2 mb-2">
           <input
             type="radio"
             name="availability"
@@ -132,17 +172,28 @@ const FilterSidebar = ({
             onChange={(e) => setAvailability(e.target.value)}
           />
           Available Today
-
         </label>
 
-        <label className="block">
-          <input type="checkbox" /> Online Consultation
+        <label className="flex gap-2">
+          <input 
+            type="radio"
+            name="availability"
+            value="Online Consultation"
+            checked={availability === "Online Consultation"}
+            onChange={(e) => setAvailability(e.target.value)}
+          /> 
+          Online Consultation
         </label>
-      </div><button
+      </div>
+
+      <button
         onClick={() => {
           setLanguage("");
           setGender("");
           setAvailability("");
+          setSpecialization("");
+          setRating("");
+          setMaxFee(5000);
         }}
         className="w-full mt-6 bg-[#111827] text-white py-3 rounded-xl"
       >
