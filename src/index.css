@@ -11,3 +11,181 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 1s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn .5s ease;
+}
+
+@keyframes line {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100px;
+  }
+}
+
+.animate-line {
+  animation: line 1s ease forwards;
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: rgba(255, 255, 255, .3);
+  transform: skewX(-25deg);
+}
+
+.btn-shine:hover::before {
+  left: 150%;
+  transition: .8s;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg,
+      #fff,
+      #C9A227,
+      #fff);
+
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  from {
+    background-position: 200%;
+  }
+
+  to {
+    background-position: -200%;
+  }
+}
+
+.service-card:hover {
+  box-shadow:
+    0 0 30px rgba(201, 162, 39, .3);
+}
+
+@keyframes bounceSlow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 3s infinite;
+}
+
+.lawyer-img {
+  transition: .5s;
+}
+
+.lawyer-img:hover {
+  transform: scale(1.08);
+}
+
+.form-border {
+  position: relative;
+}
+
+.form-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 32px;
+
+  background:
+    linear-gradient(45deg,
+      #C9A227,
+      transparent,
+      #C9A227);
+
+  animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.lawyer-img {
+  transition: .5s;
+}
+
+.lawyer-img:hover {
+  transform: scale(1.08);
+}

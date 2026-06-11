@@ -6,6 +6,7 @@ import { MdOutlinePrivacyTip } from "react-icons/md";
 import { IoMdDocument } from "react-icons/io";
 import { FaUserShield } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
+import { motion } from "framer-motion";
 const privacyItems = [
   {
     title: "Identity Protection",
@@ -33,14 +34,24 @@ const PrivacyPromise = () => {
     <section className="bg-gradient-to-br from-white via-[#FAF9F6] to-[#F3F4F6] py-8">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
 
-        <h2 className="text-2xl md:text-2xl font-bold text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl md:text-2xl font-bold text-center"
+        >
           Your Privacy Comes First
-        </h2>
-
+        </motion.h2>
+        <div className="w-24 h-1 bg-[#C9A227] rounded-full mx-auto mt-3 animate-line"></div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
 
-          {privacyItems.map((item) => (
-            <div
+          {privacyItems.map((item, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               key={item.title}
               className="
         relative
@@ -75,7 +86,7 @@ const PrivacyPromise = () => {
 
               </div>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>

@@ -1,6 +1,7 @@
 import { FaQuoteLeft } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -41,44 +42,56 @@ const Review = () => {
     <section className="py-16 bg-gradient-to-b from-white via-[#FAF9F6] to-white">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Heading */}
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
           <h2 className="text-2xl md:text-2xl font-bold text-[#111827]">
             What Clients Say
           </h2>
-
+          <div className="w-24 h-1 bg-[#C9A227] rounded-full mx-auto mt-3 animate-line"></div>
           <p className="text-gray-500 max-w-lg mx-auto mt-2">
             Thousands of clients trust us to connect them with experienced
             legal professionals.
           </p>
-        </div>
+        </motion.div>
 
         {/* Slider */}
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          spaceBetween={30}
-          slidesPerView={3}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          className="mt-16  pt-4 pb-20"
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {reviews.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className="
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={30}
+            slidesPerView={3}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            className="mt-16  pt-4 pb-20"
+          >
+            {reviews.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className="
 relative
 bg-white
 rounded-[30px]
@@ -95,48 +108,55 @@ flex
 flex-col
 "
 
-              >
-                {/* Top Accent */}
-                <div className="absolute top-0 left-0 h-1 w-full bg-[#C9A227]"></div>
+                >
+                  {/* Top Accent */}
+                  <div className="absolute top-0 left-0 h-1 w-full bg-[#C9A227]"></div>
 
-                {/* Quote Icon */}
-                <FaQuoteLeft className="text-[#C9A227]/30 text-5xl" />
+                  {/* Quote Icon */}
+                  <FaQuoteLeft className="text-[#C9A227]/30 text-5xl" />
 
-                {/* Stars */}
-                <div className="text-[#C9A227] text-xl mt-4">
-                  ★★★★★
-                </div>
+                  {/* Stars */}
+                  <div className="text-[#C9A227] text-xl mt-4">
+                    ★★★★★
+                  </div>
 
-                {/* Review */}
-                <p className="text-gray-600 mt-6 leading-8">
-                  "{item.review}"
-                </p>
+                  {/* Review */}
+                  <p className="text-gray-600 mt-6 leading-8">
+                    "{item.review}"
+                  </p>
 
-                {/* User */}
-                <div className="flex items-center gap-4 mt-8">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-14 h-14 rounded-full object-cover"
-                  />
+                  {/* User */}
+                  <div className="flex items-center gap-4 mt-8">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-14 h-14 rounded-full object-cover"
+                    />
 
-                  <div>
-                    <h4 className="font-bold text-[#111827]">
-                      {item.name}
-                    </h4>
+                    <div>
+                      <h4 className="font-bold text-[#111827]">
+                        {item.name}
+                      </h4>
 
-                    <p className="text-gray-500 text-sm">
-                      {item.location}
-                    </p>
+                      <p className="text-gray-500 text-sm">
+                        {item.location}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
 
         {/* Bottom Trust Banner */}
-        <div className="mt-16 bg-[#111827] rounded-3xl p-6 md:p-10 text-center text-white">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 bg-[#111827] rounded-3xl p-6 md:p-10 text-center text-white"
+        >
           <h3 className="text-2xl md:text-3xl font-bold">
             Trusted By 50,000+ Clients Across India
           </h3>
@@ -145,7 +165,7 @@ flex-col
             Verified lawyers, secure consultations and transparent legal
             support.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

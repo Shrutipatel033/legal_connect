@@ -10,10 +10,13 @@ import { useState } from "react";
 import heroimg from "../../assets/image.jpg"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 const HeroSection = () => {
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
   return (
+
     <div className="bg-[#FAF9F6]">
       <section
         className="relative overflow-hidden min-h-[90vh] flex items-center "
@@ -21,14 +24,21 @@ const HeroSection = () => {
       >
         {/* Dark overlay to make content readable while showing the image clearly */}
         <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute top-20 left-20 w-80 h-80 bg-[#C9A227]/10 rounded-full blur-[120px] animate-float"></div>
+
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-white/10 rounded-full blur-[150px] animate-float-delayed"></div>
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 w-full relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Left Side */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <span className="inline-flex items-center bg-[#C9A227]/20 text-[#C9A227] px-5 py-2 rounded-full text-sm font-semibold mt-5 backdrop-blur-md border border-[#C9A227]/30 ">
                 ⚖ India's Trusted Legal Platform
               </span>
-              <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-white  mt-5 drop-shadow-md">
+              <h1 className="text-3xl md:text-3xl lg:text-5xl font-bold text-white mt-5 drop-shadow-md">
                 Legal Help
                 <span className="block text-[#C9A227] mt-1">
                   Made Simple
@@ -43,16 +53,16 @@ const HeroSection = () => {
               <div className="flex flex-wrap gap-4 mt-10">
                 <button
                   onClick={() => setShowForm(true)}
-                  className="bg-white/10 backdrop-blur-md border border-white/40 text-white px-4 py-3 rounded-xl font-semibold hover:bg-white/20 hover:border-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                  className="bg-white/10 btn-shine backdrop-blur-md border border-white/40 text-white px-4 py-3 rounded-xl font-semibold hover:bg-white/20 hover:border-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 ">
                   Find Lawyer
                 </button>
                 <Link
                   to="/anonymous-consultation"
-                  className="bg-white/5 backdrop-blur-md border border-[#C9A227]/60 text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#C9A227]/20 hover:border-[#C9A227] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                  className="bg-white/5 btn-shine backdrop-blur-md border border-[#C9A227]/60 text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#C9A227]/20 hover:border-[#C9A227] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                   Talk Privately
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-6 lg:gap-10 mt-5 bg-black/40 p-6 rounded-2xl backdrop-blur-md border border-white/10 w-fit mb-4">
+              <div className="flex flex-wrap gap-6 lg:gap-10 mt-5 bg-black/40 p-6 rounded-2xl backdrop-blur-md border border-white/10 hover:border-[#C9A227]/40 transition-all duration-500">
                 <div>
                   <h3 className="text-3xl font-bold text-white">500+</h3>
                   <p className="text-gray-300 font-medium">Verified Lawyers</p>
@@ -66,14 +76,21 @@ const HeroSection = () => {
                   <p className="text-gray-300 font-medium">Success Rate</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
             {/* Right Side */}
-            <div>
-              {/* Right Side */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="min-h-[500px] flex items-center justify-center">
                 {showForm ? (
-                  <div className="bg-white/10 backdrop-blur-lg rounded-[32px] shadow-2xl border border-white/20 p-8 w-full">
-                    <h3 className="text-3xl font-bold text-white mb-8">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-white/10 backdrop-blur-lg rounded-[32px] shadow-2xl border border-white/20 p-8 w-full"
+                  >
+                    <h3 className="text-3xl font-bold text-white mb-8 ">
                       Find Your Lawyer
                     </h3>
 
@@ -100,7 +117,7 @@ const HeroSection = () => {
                       Match Me With A Lawyer
                     </button>
 
-                  </div>
+                  </motion.div>
                 ) : (
                   <div className="text-center text-white">
 
@@ -118,7 +135,7 @@ const HeroSection = () => {
                 )}
 
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
@@ -128,19 +145,25 @@ const HeroSection = () => {
       {/* Practice Areas */}
       <section className="max-w-[1400px] mx-auto px-8 lg:px-16 py-8">
 
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
 
-          <h2 className="text-2xl font-bold text-[#111827] mt-2">
+          <h2 className="text-2xl font-bold text-[#111827] mt-2 ">
             Legal Services We Cover
           </h2>
-
+          <div className="w-24 h-1 bg-[#C9A227] rounded-full mx-auto mt-3 animate-line"></div>
           <p className="text-gray-500 max-w-md mx-auto mt-4">
             Get connected with experienced lawyers specializing
             in various legal fields across India.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10 ">
 
           {[
             {
@@ -183,30 +206,34 @@ const HeroSection = () => {
               title: "Banking Law",
               desc: "Loan disputes, recovery and financial matters."
             }
-          ].map((item) => (
-            <div
+          ].map((item, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               key={item.title}
               className="
-    relative
-    overflow-hidden
-    group
-    rounded-[30px]
-    bg-gradient-to-br
-    from-white
-    via-white
-    to-[#FFF8E7]
-    p-8
-    border
-    border-gray-100
-    shadow-lg
-    hover:shadow-2xl
-    hover:-translate-y-3
-    transition-all
-    duration-500
-    flex
-    flex-col
-    h-full
-  "
+    relative service-card
+              overflow-hidden
+              group
+              rounded-[30px]
+          bg-gradient-to-br
+          from-white
+          via-white
+          to-[#FFF8E7]
+          p-8
+          border
+          border-gray-100
+          shadow-lg
+          hover:shadow-2xl
+   
+          transition-all
+          duration-500
+          flex
+          flex-col
+          h-full
+          "
             >
               {/* Icon */}
               <div className="w-16 h-16 rounded-2xl bg-[#C9A227]/10 flex items-center justify-center text-3xl">
@@ -225,7 +252,7 @@ const HeroSection = () => {
 
               <Link
                 to={`/services/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
-                className="relative z-20 mt-6 text-[#C9A227] font-semibold"
+                className="relative z-20 mt-6 text-[#C9A227] font-semibold hover:translate-x-2 transition-all duration-300"
               >
                 Learn More →
               </Link>
@@ -243,24 +270,30 @@ const HeroSection = () => {
                   />
                 </svg>
               </div>
-            </div>
+            </motion.div>
           ))}
 
         </div>
-      </section>
+      </section >
       {/* How It Works */}
-      <section className="py-10 bg-gradient-to-b from-white to-[#FAF9F6]">
+      <section section className="py-10 bg-gradient-to-b from-white to-[#FAF9F6]" >
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
             <h2 className="text-2xl font-bold text-[#111827] ">
               How It Works
             </h2>
-
+            <div className="w-24 h-1 bg-[#C9A227] rounded-full mx-auto mt-3 animate-line"></div>
             <p className="text-gray-500 max-md mx-auto mt-2">
               Get legal assistance in just a few simple steps.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
 
@@ -280,8 +313,12 @@ const HeroSection = () => {
                 title: "Get Resolution",
                 desc: "Consult, manage your case and receive expert legal guidance."
               }
-            ].map((item) => (
-              <div
+            ].map((item, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
                 key={item.number}
                 className="
             relative
@@ -321,16 +358,16 @@ const HeroSection = () => {
                 {/* Bottom Line */}
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#C9A227] group-hover:w-full transition-all duration-500"></div>
 
-              </div>
+              </motion.div>
             ))}
 
           </div>
 
         </div>
 
-      </section>
+      </section >
 
-    </div>
+    </div >
   )
 }
 export default HeroSection
