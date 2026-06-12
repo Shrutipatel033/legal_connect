@@ -6,6 +6,7 @@ import {
   FaUserSecret,
   FaGlobeAsia,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const benefits = [
   {
@@ -40,37 +41,79 @@ const benefits = [
   },
 ];
 
+const leftVariant = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
+const rightVariant = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
 const Benefits = () => {
   return (
-    <section className="py-5 bg-gradient-to-b from-white via-[#FAF9F6] to-white">
+    <section className="py-16 bg-gradient-to-b from-white via-[#FAF9F6] to-white">
 
       <div className="max-w-[1200px] mx-auto px-6">
 
-        <div className="text-center mb-10">
-
-
-          <h2 className="text-2xl font-bold text-[#111827] ">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl lg:text-3xl font-bold text-[#111827]">
             Why Choose LegalConnect
           </h2>
 
-          <p className="text-gray-500 max-lg mx-auto mt-4 ">
+          <div className="w-24 h-1 bg-[#C9A227] rounded-full mx-auto mt-4"></div>
+
+          <p className="text-gray-500 max-w-2xl mx-auto mt-5 leading-8">
             Trusted by thousands of clients for secure,
             transparent and professional legal services.
           </p>
+        </motion.div>
 
-        </div>
-
-        <div className="relative ">
+        <div className="relative">
 
           {/* Center Line */}
-          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-1 bg-[#C9A227]/20 -translate-x-1/2 "></div>
+          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-1 bg-[#C9A227]/20 -translate-x-1/2"></div>
 
-          <div className="space-y-12 ">
+          <div className="space-y-12">
 
             {benefits.map((item, index) => (
 
-              <div
+              <motion.div
                 key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={
+                  index % 2 === 0
+                    ? leftVariant
+                    : rightVariant
+                }
                 className={`flex items-center ${index % 2 === 0
                   ? "lg:flex-row"
                   : "lg:flex-row-reverse"
@@ -80,45 +123,64 @@ const Benefits = () => {
                 {/* Card */}
                 <div className="w-full lg:w-[45%]">
 
-                  <div className="
-                    bg-white
-                    rounded-[30px]
-                    p-8
-                    shadow-xl
-                    border
-                    border-gray-100
-                    hover:shadow-2xl
-                    transition-all
-                    duration-500
-                    hover:-translate-y-1
-                  ">
+                  <motion.div
+                    whileHover={{
+                      y: -8,
+                      scale: 1.03,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                    className="
+                      bg-white
+                      rounded-[30px]
+                      p-8
+                      shadow-xl
+                      border
+                      border-gray-100
+                      hover:shadow-2xl
+                      transition-all
+                      duration-500
+                    "
+                  >
 
                     <div className="flex items-center gap-5">
 
-                      <div className="
-                        w-16
-                        h-16
-                        rounded-2xl
-                        bg-gradient-to-br
-                        from-[#C9A227]
-                        to-[#e0bc48]
-                        text-white
-                        flex
-                        items-center
-                        justify-center
-                        text-2xl
-                        shadow-lg
-                      ">
+                      {/* Icon */}
+                      <motion.div
+                        whileHover={{
+                          rotate: 10,
+                          scale: 1.15,
+                        }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                        }}
+                        className="
+                          w-16
+                          h-16
+                          rounded-2xl
+                          bg-gradient-to-br
+                          from-[#C9A227]
+                          to-[#e0bc48]
+                          text-white
+                          flex
+                          items-center
+                          justify-center
+                          text-2xl
+                          shadow-lg
+                        "
+                      >
                         {item.icon}
-                      </div>
+                      </motion.div>
 
                       <div>
 
-                        <h3 className="text-lg font-bold text-[#111827]">
+                        <h3 className="text-xl font-bold text-[#111827]">
                           {item.title}
                         </h3>
 
-                        <p className="text-gray-500 mt-2 leading-7 text-sm">
+                        <p className="text-gray-500 mt-2 leading-7">
                           {item.desc}
                         </p>
 
@@ -126,32 +188,41 @@ const Benefits = () => {
 
                     </div>
 
-                  </div>
+                  </motion.div>
 
                 </div>
 
                 {/* Center Circle */}
-                <div className="
-                  hidden
-                  lg:flex
-                  w-12
-                  h-12
-                  rounded-full
-                  bg-[#C9A227]
-                  text-white
-                  items-center
-                  justify-center
-                  font-bold
-                  shadow-xl
-                  z-10
-                ">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.2,
+                  }}
+                  className="
+                    hidden
+                    lg:flex
+                    w-12
+                    h-12
+                    rounded-full
+                    bg-[#C9A227]
+                    text-white
+                    items-center
+                    justify-center
+                    font-bold
+                    shadow-xl
+                    z-10
+                  "
+                >
                   {index + 1}
-                </div>
+                </motion.div>
 
                 {/* Empty Side */}
                 <div className="hidden lg:block w-[45%]"></div>
 
-              </div>
+              </motion.div>
 
             ))}
 

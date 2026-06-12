@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Timeline = () => {
   const steps = [
     {
@@ -23,41 +25,68 @@ const Timeline = () => {
   ];
 
   return (
-    <section className="py-10 bg-[#FAF9F6]">
+    <section className="py-16 bg-gradient-to-b from-white via-[#FAF9F6] to-white">
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
 
         {/* Heading */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
 
+          <span className="px-5 py-2 rounded-full bg-[#C9A227]/10 text-[#C9A227] font-semibold">
+            Legal Process
+          </span>
 
           <h2 className="text-3xl lg:text-3xl font-bold text-[#111827] mt-5">
             Your Legal Journey
           </h2>
 
-          <p className="text-gray-500 mt-2 max-w-xl mx-auto">
-            A simple process designed to connect you with trusted lawyers.
+          <div className="w-24 h-1 bg-[#C9A227] rounded-full mx-auto mt-2 "></div>
+
+          <p className="text-gray-500 mt-2 max-w-xl mx-auto leading-8">
+            A simple and transparent process designed to connect
+            you with trusted legal professionals.
           </p>
 
-        </div>
+        </motion.div>
 
-        {/* Steps Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {steps.map((step) => (
+          {steps.map((step, index) => (
 
-            <div
+            <motion.div
               key={step.no}
+              initial={{
+                opacity: 0,
+                y: 60,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+              }}
+              whileHover={{
+                y: -12,
+              }}
               className="
                 relative
                 bg-white
-                rounded-[30px]
+                rounded-[32px]
                 p-8
                 border
                 border-gray-100
-                shadow-lg
+                shadow-xl
                 hover:shadow-2xl
-                hover:-translate-y-2
                 transition-all
                 duration-500
                 overflow-hidden
@@ -65,13 +94,28 @@ const Timeline = () => {
               "
             >
 
+              {/* Top Accent Line */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#C9A227] via-[#e4bf48] to-[#C9A227]"></div>
+
+              {/* Glow Circle */}
+              <div className="
+                absolute
+                -top-10
+                -right-10
+                w-32
+                h-32
+                bg-[#C9A227]/10
+                rounded-full
+                blur-2xl
+              "></div>
+
               {/* Background Number */}
               <h1
                 className="
                   absolute
                   top-2
                   right-4
-                  text-[70px]
+                  text-[80px]
                   font-black
                   text-[#C9A227]/10
                   select-none
@@ -80,24 +124,36 @@ const Timeline = () => {
                 {step.no}
               </h1>
 
-              {/* Number Circle */}
-              <div
+              {/* Step Number */}
+              <motion.div
+                whileHover={{
+                  rotate: 360,
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.6,
+                }}
                 className="
                   w-16
                   h-16
                   mx-auto
                   rounded-2xl
-                  bg-[#111827]
+                  bg-gradient-to-br
+                  from-[#111827]
+                  to-[#1F2937]
                   text-white
                   flex
                   items-center
                   justify-center
                   text-xl
                   font-bold
+                  shadow-lg
+                  relative
+                  z-10
                 "
               >
                 {step.no}
-              </div>
+              </motion.div>
 
               {/* Title */}
               <h3 className="text-xl font-bold text-[#111827] mt-6">
@@ -109,12 +165,25 @@ const Timeline = () => {
                 {step.desc}
               </p>
 
-              {/* Bottom Line */}
-              <div className="mt-6 flex justify-center">
-                <div className="w-12 h-1 bg-[#C9A227] rounded-full"></div>
-              </div>
+              {/* Bottom Accent */}
+              <motion.div
+                whileHover={{
+                  width: "80px",
+                }}
+                transition={{
+                  duration: 0.3,
+                }}
+                className="
+                  mt-6
+                  mx-auto
+                  w-12
+                  h-1
+                  bg-[#C9A227]
+                  rounded-full
+                "
+              />
 
-            </div>
+            </motion.div>
 
           ))}
 
