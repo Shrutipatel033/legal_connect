@@ -54,8 +54,8 @@ const Header = () => {
             </NavLink>
 
             <NavLink
-              // to="/lawyers"
-              to="/superadmin"
+              to="/lawyers"
+              // to="/superadmin"
               className={navLinkClass}
             >
               Find Lawyer
