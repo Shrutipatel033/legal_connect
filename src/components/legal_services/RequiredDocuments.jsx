@@ -6,6 +6,7 @@ import {
   FaFolderOpen,
   FaGavel,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const docs = [
   {
@@ -48,22 +49,32 @@ const RequiredDocuments = () => {
         {/* Heading */}
         <div className="text-center mb-10">
 
-
-          <h2 className="text-4xl md:text-2xl font-bold text-[var(--primary)] mt-3">
-            Required Documents
-          </h2>
-
-          <p className="text-gray-600 max-w-xl mx-auto mt-3">
-            Keep the following documents ready to ensure a smooth
-            and hassle-free legal consultation process.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h2 className="text-4xl md:text-2xl font-bold text-[var(--primary)] mt-3">
+              Required Documents
+            </h2>
+            <div className="w-24 h-1 bg-[#C9A227] rounded-full mx-auto mt-3 animate-line"></div>
+            <p className="text-gray-600 max-w-xl mx-auto mt-3">
+              Keep the following documents ready to ensure a smooth
+              and hassle-free legal consultation process.
+            </p></motion.div>
         </div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {docs.map((doc, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               key={index}
               className="relative overflow-hidden bg-[var(--background)] rounded-3xl p-8 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
             >
@@ -93,7 +104,7 @@ const RequiredDocuments = () => {
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           ))}
 
         </div>

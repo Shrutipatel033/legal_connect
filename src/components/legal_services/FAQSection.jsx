@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
-
+import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     question: "How long does a case take?",
@@ -30,17 +30,30 @@ const FAQSection = () => {
     <section className="py-10 bg-[var(--background)]">
       <div className="max-w-6xl mx-auto px-6">
 
-        <h2 className="text-2xl md:text-3xl font-bold text-start text-[var(--primary)] mb-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl md:text-3xl font-bold text-start text-[var(--primary)] mb-10"
+        >
           Frequently Asked Questions
-        </h2>
+        </motion.h2>
 
         <div className="space-y-4">
 
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-2xl shadow-sm overflow-hidden"
-            >
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              whileHover={{ y: -4 }}
+              className="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-transparent hover:border-[var(--accent)]/30 overflow-hidden transition-all duration-300">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between p-6 text-left"
@@ -49,23 +62,40 @@ const FAQSection = () => {
                   {faq.question}
                 </h3>
 
-                <FaChevronDown
-                  className={`text-[var(--accent)] transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
-                    }`}
-                />
+                <motion.div
+                  animate={{
+                    rotate: openIndex === index ? 180 : 0,
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <FaChevronDown className="text-[var(--accent)]" />
+                </motion.div>
               </button>
 
-              <div
-                className={`transition-all duration-300 overflow-hidden ${openIndex === index
-                  ? "max-h-40 opacity-100 px-6 pb-6"
-                  : "max-h-0 opacity-0"
-                  }`}
-              >
-                <p className="text-gray-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{
+                      height: "auto",
+                      opacity: 1,
+                    }}
+                    exit={{
+                      height: 0,
+                      opacity: 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                    className="overflow-hidden px-6"
+                  >
+                    <p className="pb-6 text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
 
         </div>

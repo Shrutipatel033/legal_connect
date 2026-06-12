@@ -1,5 +1,5 @@
 import { FaCheckCircle } from "react-icons/fa";
-
+import { motion } from "framer-motion"
 const plans = [
   {
     name: "Basic",
@@ -42,6 +42,14 @@ const plans = [
 ];
 
 const PricingPlans = () => {
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
   return (
     <section className="py-10 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto px-6">
@@ -49,23 +57,46 @@ const PricingPlans = () => {
         {/* Heading */}
         <div className="text-center mb-16">
 
-
-          <h2 className="text-2xl md:text-2xl font-bold text-[var(--primary)] mt-2">
-            Choose The Right Plan
-          </h2>
-
-          <p className="text-gray-600 mt-3 max-w-xl mx-auto">
-            Transparent pricing with professional legal support
-            tailored to your needs.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h2 className="text-2xl md:text-2xl font-bold text-[var(--primary)] mt-2">
+              Choose The Right Plan
+            </h2>
+            <div className="w-24 h-1 bg-[#C9A227] rounded-full mx-auto mt-3 animate-line"></div>
+            <p className="text-gray-600 mt-3 max-w-xl mx-auto">
+              Transparent pricing with professional legal support
+              tailored to your needs.
+            </p></motion.div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
 
           {plans.map((plan, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
               className={`relative overflow-hidden rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2
               
               ${plan.featured
@@ -81,18 +112,41 @@ const PricingPlans = () => {
               )}
 
               {/* Decorative Circle */}
-              <div className="absolute -top-12 -right-12 w-40 h-40 bg-[var(--accent)]/10 rounded-full"></div>
-
+              <motion.div
+                animate={{
+                  y: [0, -15, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -top-12 -right-12 w-40 h-40 bg-[var(--accent)]/10 rounded-full"
+              />
               <div className="relative z-10">
 
-                <h3 className="text-xl font-bold">
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-xl font-bold"
+                >
                   {plan.name}
-                </h3>
+                </motion.h3>
 
                 <div className="mt-6">
-                  <span className="text-2xl font-bold">
+                  <motion.span
+                    initial={{ scale: 0.5 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 200,
+                      delay: 0.4,
+                    }}
+                    className="text-2xl font-bold"
+                  >
                     {plan.price}
-                  </span>
+                  </motion.span>
                 </div>
 
                 <p
@@ -108,8 +162,15 @@ const PricingPlans = () => {
                 <ul className="mt-8 space-y-4">
 
                   {plan.features.map((feature, idx) => (
-                    <li
+                    <motion.li
                       key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: idx * 0.1,
+                        duration: 0.4,
+                      }}
                       className="flex items-center gap-3"
                     >
                       <FaCheckCircle className="text-[var(--accent)]" />
@@ -117,13 +178,19 @@ const PricingPlans = () => {
                       <span>
                         {feature}
                       </span>
-                    </li>
+                    </motion.li>
                   ))}
 
                 </ul>
 
                 {/* Button */}
-                <button
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                  }}
                   className={`w-full mt-10 py-3 rounded-xl font-semibold transition
 
                   ${plan.featured
@@ -132,17 +199,17 @@ const PricingPlans = () => {
                     }`}
                 >
                   Get Started
-                </button>
+                </motion.button>
 
               </div>
 
-            </div>
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
-    </section>
+    </section >
   );
 };
 

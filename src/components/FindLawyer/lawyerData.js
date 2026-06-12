@@ -18,7 +18,7 @@ const lawyers = [
 
   {
     id: 2,
-    name: "Priya Verma",
+    name: "Riya Verma",
     specialization: "Criminal Law",
     city: "Delhi",
     court: "District Court",

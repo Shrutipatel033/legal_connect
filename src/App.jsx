@@ -17,27 +17,69 @@ import MyConsultations from "./Pages/Consultation/MyConsultation";
 import AnonymousConsultation from "./Pages/Consultation/AnonymousConsultation";
 import AnonymousSuccess from "./Pages/Consultation/AnonymousSuccess";
 import AnonymousRequestSuccess from "./Pages/Consultation/AnonymousRequestSuccess";
+import SuperAdminDashboard from "./Pages/Dashboard/superadmin/SuperAdminDashboard";
+import DashboardLayout from "./layout/DashboardLayout";
+import Admins from "./Pages/Dashboard/superadmin/Admins";
+import Lawyers from "./Pages/Dashboard/superadmin/Lawyers";
+import Clients from "./Pages/Dashboard/superadmin/Clients";
 function App() {
   return (
     <Routes>
+
+      {/* Website Pages */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/lawyers" element={<FindLawyer />} />
-        <Route path="/lawyer/:id" element={<LawyerProfile />} />
-        <Route path="/services" element={<Service />} />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/services/:serviceName" element={<ServiceDetails />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blog/:id" element={<BlogDetails />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/book-consultation/:lawyerId" element={<BookConsultation />} />
-        <Route path="/consultation-success" element={<ConsultationSuccess />} />
-        <Route path="/anonymous-request-success" element={<AnonymousRequestSuccess />} />
-        <Route path="/my-consultations" element={<MyConsultations />} />
-        <Route path="/anonymous-consultation" element={<AnonymousConsultation />} />
-        <Route path="/anonymous-success" element={<AnonymousSuccess />} />
+        <Route path="lawyers" element={<FindLawyer />} />
+        <Route path="lawyer/:id" element={<LawyerProfile />} />
+        <Route path="services" element={<Service />} />
+        <Route path="how-it-works" element={<HowItWorks />} />
+        <Route path="services/:serviceName" element={<ServiceDetails />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="blog/:id" element={<BlogDetails />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="book-consultation/:lawyerId" element={<BookConsultation />} />
+        <Route path="consultation-success" element={<ConsultationSuccess />} />
+        <Route path="anonymous-request-success" element={<AnonymousRequestSuccess />} />
+        <Route path="my-consultations" element={<MyConsultations />} />
+        <Route path="anonymous-consultation" element={<AnonymousConsultation />} />
+        <Route path="anonymous-success" element={<AnonymousSuccess />} />
+      </Route>
+
+      {/* Dashboard Routes */}
+      <Route element={<DashboardLayout />}>
+
+        <Route
+          path="/superadmin"
+          element={<SuperAdminDashboard />}
+        />
+
+        <Route
+          path="/superadmin/admins"
+          element={<Admins />}
+        />
+
+        <Route
+          path="/superadmin/lawyers"
+          element={<Lawyers />}
+        />
+
+        <Route
+          path="/superadmin/clients"
+          element={<Clients />}
+        />
+
+        {/* <Route
+          path="/superadmin/services"
+          element={<Services />}
+        />
+
+        <Route
+          path="/superadmin/blogs"
+          element={<AdminBlogs />}
+        /> */}
+
       </Route>
     </Routes>
   );
