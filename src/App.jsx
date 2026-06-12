@@ -49,26 +49,10 @@ function App() {
 
       {/* Dashboard Routes */}
       <Route element={<DashboardLayout />}>
-
-        <Route
-          path="/superadmin"
-          element={<SuperAdminDashboard />}
-        />
-
-        <Route
-          path="/superadmin/admins"
-          element={<Admins />}
-        />
-
-        <Route
-          path="/superadmin/lawyers"
-          element={<Lawyers />}
-        />
-
-        <Route
-          path="/superadmin/clients"
-          element={<Clients />}
-        />
+        <Route path="/superadmin" element={<SuperAdminDashboard />} />
+        <Route path="/superadmin/admins" element={<Admins />} />
+        <Route path="/superadmin/lawyers" element={<Lawyers />} />
+        <Route path="/superadmin/clients" element={<Clients />} />
 
         {/* <Route
           path="/superadmin/services"
