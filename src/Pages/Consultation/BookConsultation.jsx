@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import lawyers from "../../components/FindLawyer/lawyerData";
-
 const BookConsultation = () => {
   const navigate = useNavigate();
   const { lawyerId } = useParams();
-
   const lawyer = lawyers.find(
     (item) => item.id === Number(lawyerId)
   );
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",

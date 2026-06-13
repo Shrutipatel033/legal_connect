@@ -1,11 +1,4 @@
-import {
-  FaPlus,
-  FaSearch,
-  FaEye,
-  FaEdit,
-  FaTrash,
-} from "react-icons/fa";
-
+import { FaPlus, FaSearch, FaEye, FaEdit, FaTrash, } from "react-icons/fa";
 const lawyers = [
   {
     id: 1,
@@ -28,14 +21,11 @@ const lawyers = [
 const Lawyers = () => {
   return (
     <div className="p-6">
-
       <div className="flex justify-between items-center mb-8">
-
         <div>
           <h1 className="text-2xl font-bold">
             Lawyer Management
           </h1>
-
           <p className="text-gray-500 mt-1">
             Manage all registered lawyers
           </p>
