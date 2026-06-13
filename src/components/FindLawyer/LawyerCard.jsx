@@ -1,16 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
-import { MdVerified, MdStar } from "react-icons/md";
+import { MdStar } from "react-icons/md";
 import { HiOutlineLocationMarker, HiOutlineAcademicCap, HiOutlineLibrary, HiOutlineTranslate, HiOutlineClock, HiOutlineCalendar } from "react-icons/hi";
 import { FiArrowRight } from "react-icons/fi";
 
 const LawyerCard = ({ lawyer }) => {
   const navigate = useNavigate();
-
   const isAnonymous = localStorage.getItem("anonymousMode") === "true";
 
   return (
     <div className="group bg-white rounded-[24px] p-6 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:border-[#C9A227]/30 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
-
       {/* Premium subtle gradient background on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 relative z-10">
@@ -21,11 +19,7 @@ const LawyerCard = ({ lawyer }) => {
               alt={lawyer.name}
               className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border border-gray-200 shadow-sm group-hover:border-[#C9A227]/50 transition-colors duration-300"
             />
-            {/* {lawyer.verified && (
-              <div className="absolute -bottom-2 -right-2 bg-green-500 text-white p-1.5 rounded-full border-2 border-white shadow-sm" title="Verified Professional">
-                <MdVerified className="w-5 h-5" />
-              </div>
-            )} */}
+
           </div>
 
           {/* Lawyer Details */}

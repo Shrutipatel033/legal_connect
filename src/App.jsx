@@ -26,7 +26,6 @@ function App() {
   return (
     <Routes>
 
-      {/* Website Pages */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="lawyers" element={<FindLawyer />} />
@@ -47,7 +46,7 @@ function App() {
         <Route path="anonymous-success" element={<AnonymousSuccess />} />
       </Route>
 
-      {/* Dashboard Routes */}
+
       <Route element={<DashboardLayout />}>
         <Route path="/superadmin" element={<SuperAdminDashboard />} />
         <Route path="/superadmin/admins" element={<Admins />} />
