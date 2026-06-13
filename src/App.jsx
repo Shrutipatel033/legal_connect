@@ -22,6 +22,10 @@ import DashboardLayout from "./layout/DashboardLayout";
 import Admins from "./Pages/Dashboard/superadmin/Admins";
 import Lawyers from "./Pages/Dashboard/superadmin/Lawyers";
 import Clients from "./Pages/Dashboard/superadmin/Clients";
+import AdminDashboard from "./Pages/Dashboard/admin/AdminDashboard";
+import LawyerDashboard from "./Pages/Dashboard/lawyer/LawyerDashboard";
+import ClientDashboard from "./Pages/Dashboard/client/ClientDashboard";
+import NotFound from "./Pages/NotFound/NotFound";
 function App() {
   return (
     <Routes>
@@ -44,6 +48,8 @@ function App() {
         <Route path="my-consultations" element={<MyConsultations />} />
         <Route path="anonymous-consultation" element={<AnonymousConsultation />} />
         <Route path="anonymous-success" element={<AnonymousSuccess />} />
+
+        <Route path="*" element={<NotFound />} />
       </Route>
 
 
@@ -53,15 +59,13 @@ function App() {
         <Route path="/superadmin/lawyers" element={<Lawyers />} />
         <Route path="/superadmin/clients" element={<Clients />} />
 
-        {/* <Route
-          path="/superadmin/services"
-          element={<Services />}
-        />
+        <Route path="/admin" element={<AdminDashboard />} />
 
-        <Route
-          path="/superadmin/blogs"
-          element={<AdminBlogs />}
-        /> */}
+        {/* Lawyer */}
+        <Route path="/lawyer" element={<LawyerDashboard />} />
+
+        {/* Client */}
+        <Route path="/client" element={<ClientDashboard />} />
 
       </Route>
     </Routes>

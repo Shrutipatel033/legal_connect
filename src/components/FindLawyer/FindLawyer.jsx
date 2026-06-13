@@ -1,7 +1,7 @@
 import SearchBar from "../FindLawyer/Searchbar";
 import FilterSidebar from "../FindLawyer/FilterSidebar";
 import LawyerCard from "../FindLawyer/LawyerCard";
-import lawyers from "../FindLawyer/lawyerData";
+import lawyers from "../../data/lawyerData";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -93,7 +93,7 @@ const FindLawyerPage = () => {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
 
         {/* Page Heading */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
