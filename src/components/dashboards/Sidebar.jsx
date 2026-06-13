@@ -10,8 +10,7 @@ const Sidebar = ({
     { name: "Admins", path: "/superadmin/admins" },
     { name: "Lawyers", path: "/superadmin/lawyers" },
     { name: "Clients", path: "/superadmin/clients" },
-    { name: "Services", path: "/superadmin/services" },
-    { name: "Blogs", path: "/superadmin/blogs" },
+
   ];
 
   return (
