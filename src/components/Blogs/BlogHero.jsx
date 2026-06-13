@@ -6,7 +6,6 @@ const BlogHero = () => {
 
           {/* Left Content */}
           <div>
-
             <span className="inline-block px-4 py-2 rounded-full bg-[#C9A227]/10 text-[#C9A227] font-medium">
               Legal Knowledge Center
             </span>
