@@ -54,6 +54,20 @@ const blogs = [
       of a property from one person to another.
     `,
   },
+  {
+    id: 3,
+    title: "Property Registration Process",
+    category: "Divorce  Law",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
+    date: "18 June 2026",
+    readTime: "6 Min Read",
+    description:
+      "Step-by-step guide to property registration in India.",
+    content: `
+      Property registration legally transfers ownership
+      of a property from one person to another.
+    `,
+  },
 ];
 
 export default blogs;
