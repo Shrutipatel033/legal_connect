@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const HowHero = () => {
   return (
     <section className="relative overflow-hidden py-24 lg:py-10 bg-[#FAF9F6]">
@@ -51,9 +52,9 @@ const HowHero = () => {
             transition={{ duration: 1.2 }}
             className="flex flex-wrap justify-center gap-4 mt-5"
           >
-            <button className="px-8 py-4 rounded-2xl bg-[#111827] text-white font-semibold hover:bg-[#1F2937] transition">
+            <Link to={"/lawyers"} className="px-8 py-4 rounded-2xl bg-[#111827] text-white font-semibold hover:bg-[#1F2937] transition">
               Find Lawyer
-            </button>
+            </Link>
 
             <button className="px-8 py-4 rounded-2xl border border-[#C9A227] text-[#C9A227] font-semibold hover:bg-[#C9A227] hover:text-white transition">
               Learn More

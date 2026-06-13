@@ -1,6 +1,6 @@
 import image1 from "../../assets/slider.jpg";
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 const ServicesHero = () => {
   return (
     <section
@@ -64,9 +64,9 @@ const ServicesHero = () => {
           transition={{ duration: 1.2 }}
           className="flex flex-wrap justify-center gap-4 mt-5"
         >
-          <button className="bg-[var(--accent)] text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <Link to={"/lawyers"} className="bg-[var(--accent)] text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             Book Consultation
-          </button>
+          </Link>
 
           <button className="border border-white/30 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300">
             Learn More

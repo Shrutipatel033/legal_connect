@@ -11,7 +11,7 @@ const HowItWorks = () => {
       <ProcessSteps />
       <Benefits />
       <Timeline />
-      <CTA />
+      {/* <CTA /> */}
     </>
   );
 };

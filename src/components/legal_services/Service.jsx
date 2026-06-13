@@ -17,7 +17,7 @@ const Services = () => {
       <RequiredDocuments />
       <PricingPlans />
       <FAQSection />
-      <ServicesCTA />
+
     </>
   );
 };
