@@ -5,7 +5,6 @@ import ProcessTimeline from "../../components/legal_services/ProcessTimeline";
 import RequiredDocuments from "../../components/legal_services/RequiredDocuments";
 import PricingPlans from "../../components/legal_services/PricingPlans";
 import FAQSection from "../../components/legal_services/FAQSection";
-import ServicesCTA from "../../components/legal_services/ServicesCTA";
 
 const Services = () => {
   return (
