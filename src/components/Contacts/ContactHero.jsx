@@ -1,36 +1,74 @@
-import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+
+import { motion } from "framer-motion";
 
 const ContactHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#111827] via-[#1F2937] to-[#111827] py-28">
+    <section className="relative py-10 overflow-hidden bg-[#FAF9F6]">
 
-      <div className="absolute top-0 left-0 w-80 h-80 bg-[#C9A227]/10 rounded-full blur-3xl"></div>
+      {/* Light Glow Effects */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#C9A227]/10 rounded-full blur-[120px]"></div>
 
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#C9A227]/5 rounded-full blur-[100px]"></div>
 
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
+      {/* Decorative Circles */}
+      <div className="absolute top-20 left-20 w-32 h-32 border border-[#C9A227]/20 rounded-full"></div>
 
-        <span className="inline-block px-5 py-2 bg-[#C9A227]/20 text-[#C9A227] rounded-full font-semibold">
+      <div className="absolute top-32 right-32 w-20 h-20 border border-[#C9A227]/20 rounded-full"></div>
+
+      <div className="absolute bottom-24 left-1/]][3 w-16 h-16 border border-[#C9A227]/20 rounded-full"></div>
+
+      <div className="relative max-w-6xl mx-auto px-6 text-center">
+
+        <motion.span
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }} className="inline-block px-5 py-2 rounded-full bg-[#C9A227]/10 text-[#C9A227] font-medium">
           Contact LegalConnect
-        </span>
+        </motion.span>
 
-        <h1 className="text-5xl lg:text-7xl font-bold text-white mt-6">
-          Get In Touch With
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }} className="mt-8 text-5xl lg:text-4xl font-bold text-[#111827] leading-tight">
+          We're Here To Help With
           <span className="block text-[#C9A227]">
-            Legal Experts
+            Your Legal Journey
           </span>
-        </h1>
+        </motion.h1>
 
-        <p className="text-gray-300 max-w-3xl mx-auto mt-6 text-lg leading-8">
-          Need legal guidance? Contact our team and get connected
-          with trusted lawyers across India.
-        </p>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }} className="mt-5 text-gray-600 text-lg max-w-2xl mx-auto leading-8">
+          Have questions about legal services, consultations,
+          or case management? Our team is ready to assist you.
+        </motion.p>
+
+        {/* Premium Cards */}
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+
+          <div className="bg-white px-6 py-4 rounded-2xl shadow-md">
+            <h4 className="font-semibold text-[#111827]">
+              Confidential Support
+            </h4>
+          </div>
+
+          <div className="bg-white px-6 py-4 rounded-2xl shadow-md">
+            <h4 className="font-semibold text-[#111827]">
+              Verified Lawyers
+            </h4>
+          </div>
+
+          <div className="bg-white px-6 py-4 rounded-2xl shadow-md">
+            <h4 className="font-semibold text-[#111827]">
+              Quick Response
+            </h4>
+          </div>
+
+        </div>
 
       </div>
+
     </section>
   );
 };

@@ -53,10 +53,7 @@ const PricingPlans = () => {
   return (
     <section className="py-10 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto px-6">
-
-        {/* Heading */}
         <div className="text-center mb-16">
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

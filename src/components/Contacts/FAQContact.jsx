@@ -1,52 +1,74 @@
+import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
+
+const faqs = [
+  {
+    question: "How quickly will I receive a response?",
+    answer: "Usually within 15–30 minutes.",
+  },
+  {
+    question: "Is my consultation confidential?",
+    answer: "Yes, completely confidential.",
+  },
+  {
+    question: "Can I consult online?",
+    answer: "Yes, online consultation is available.",
+  },
+];
+
 const ContactFAQ = () => {
-  const faqs = [
-
-    {
-      q: "How quickly will I receive a response?",
-      a: "Usually within 15-30 minutes during business hours.",
-    },
-    {
-      q: "Are consultations confidential?",
-      a: "Yes. All consultations remain private and secure.",
-    },
-    {
-      q: "Can I consult online?",
-      a: "Yes, we provide online and offline consultations.",
-    },
-  ];
-
+  const [openIndex, setOpenIndex] = useState(null);
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
   return (
-    <section className="py-20 bg-[#FAF9F6]">
+    <section className="py-10 bg-[#FAF9F6]">
 
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto ">
 
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl font-bold text-start mb-12">
           Frequently Asked Questions
         </h2>
 
-        <div className="space-y-5">
+        <div className="space-y-4">
 
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-3xl shadow-lg"
+              className="bg-white rounded-2xl shadow-sm overflow-hidden"
             >
-              <h3 className="font-bold text-lg">
-                {faq.q}
-              </h3>
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex items-center justify-between p-6 text-left"
+              >
+                <h3 className="font-semibold text-lg text-[var(--primary)]">
+                  {faq.question}
+                </h3>
 
-              <p className="text-gray-500 mt-3">
-                {faq.a}
-              </p>
+                <FaChevronDown
+                  className={`text-[var(--accent)] transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
 
+              <div
+                className={`transition-all duration-300 overflow-hidden ${openIndex === index
+                  ? "max-h-40 opacity-100 px-6 pb-6"
+                  : "max-h-0 opacity-0"
+                  }`}
+              >
+                <p className="text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
             </div>
           ))}
 
         </div>
-
       </div>
 
     </section>
+
   );
 };
 

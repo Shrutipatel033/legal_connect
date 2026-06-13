@@ -13,13 +13,8 @@ const LawyerCard = ({ lawyer }) => {
 
       {/* Premium subtle gradient background on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 relative z-10">
-
-        {/* Left Section */}
         <div className="flex flex-col sm:flex-row gap-6 flex-1 w-full">
-
-          {/* Lawyer Image */}
           <div className="shrink-0 relative self-start mx-auto sm:mx-0">
             <img
               src={lawyer.image}
