@@ -11,7 +11,6 @@ import heroimg from "../../assets/image.jpg"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
 const HeroSection = () => {
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
@@ -62,7 +61,7 @@ const HeroSection = () => {
                   Talk Privately
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-6 lg:gap-10 mt-5 bg-black/40 p-6 rounded-2xl backdrop-blur-md border border-white/10 hover:border-[#C9A227]/40 transition-all duration-500">
+              <div className="flex flex-wrap gap-6 lg:gap-10 mt-5 bg-black/40 p-6 rounded-2xl backdrop-blur-md border border-white/10 hover:border-[#C9A227]/40 transition-all duration-500 mb-5">
                 <div>
                   <h3 className="text-3xl font-bold text-white">500+</h3>
                   <p className="text-gray-300 font-medium">Verified Lawyers</p>
